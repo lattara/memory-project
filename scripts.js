@@ -6,4 +6,6 @@ let firstCard, secondCard;
      console.log('clicked')
 
  }
-
+if (memory-card > 2 ){
+    flipCard
+}
