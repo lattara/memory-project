@@ -7,10 +7,10 @@
   body {
     height: 100vh;
     display: flex;
-    background: #060AB2;
+    background: rgb(52, 186, 190);
   }
   
-  .memory-game {
+  #memory-game {
     width: 640px;
     height: 640px;
     margin: auto;
@@ -18,7 +18,7 @@
     flex-wrap: wrap;
     perspective: 1000px;
   }
-  
+
   .memory-card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
@@ -27,7 +27,8 @@
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    border-radius: 5px;
   }
   
   .memory-card:active {
@@ -35,7 +36,7 @@
     transition: transform .0.5s;
   }
   
-  .memory-card.flip {
+  .flip {
     transform: rotateY(180deg);
   }
   
@@ -43,7 +44,7 @@
   .back-face {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 5px;
     position: absolute;
     border-radius: 5px;
     background: #1C7CCC;
@@ -53,3 +54,55 @@
   .front-face {
     transform: rotateY(180deg);
   }
+
+
+
+  /* ----- button ----- */
+
+  #game_state{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    background-color: gray;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #play, #reset{
+    text-align: center;
+    background-color: #060AB2;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  }
+
+  .play_button, .reset_button{
+    width: 100px;
+    padding: 10px 30px;
+    color: white;
+    display: block;
+    text-decoration: none;
+  }
+
+  .play_button:active, .reset_button:active {
+    transform: scale(0.97);
+    transition: transform .0.5s;
+    box-shadow: 0;
+  }
+
+
+/*
+  #images{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #images img{
+    width: 100px;
+    height: 50px;
+  } 
+  */
+
+

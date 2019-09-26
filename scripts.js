@@ -1,43 +1,46 @@
-const cards = document.querySelectorAll('.memory-card');
+const easyMode = 4;
+const easyMedium = 6;
+const easyHard = 8;
+const double = 2;
+const triple = 3;
+
+const easy = { 
+  cards: [
+      'images/Kenny.png',
+      'images/Cartman.png',
+      'images/Kyle.png',
+      'images/Stan.png',
+      'images/Timmy.png',
+      'images/Wendy.png',
+  ]
+};
+
+const cardsElt = document.getElementById('memory-game');
+
+/* // boucle de base
+for (let i = 0; i < easyMode; i++) {
+  for (let j = 0; j < double; j++) {
+    cardsElt.innerHTML += `<img src="${easy.cards[i]}" />`;
+  }
+};
+
+function displayCard() {
+  alert('le bouton marche !!!')
+};
+*/
+
+function displayCard() {
+  for (let i = 0; i < easyMode; i++) {
+    for (let j = 0; j < double; j++) {
+      cardsElt.innerHTML += `<div class="memory-card" data-framework=""><img class="back-face" src="https://via.placeholder.com/150x150" alt="JS Badge" /><img class="front-face imgCard" src="${easy.cards[i]}" /></div>`;
+    }
+  };
+};
+
+const cards = document.getElementsByClassName('memory-card');
 let firstCard;
 
 function flipCard() {
   this.classList.toggle('flip');
 }
 cards.forEach(card => card.addEventListener('click', flipCard));
-
-
-let cards= 
-
-
-
-
-
-
-const cards = {
-  name: 22 , 
-  age: 28,
-  carte: [ 
-  kenny: Card1.png;
-  cartman: Cartman.png;
-  kyle: Kyle.png;]
-};
-
-let cardsElt = document.getElementsById('memory-card'); 
-
-for (let i in cards.carte) {
-  cardsElt.innerHTML += `<img src="${cards.carte[1]}" onclick="onCarteClicked/>`;
-}
-
-/*let avatarsElt = document.getElementById('avatars');
-for (let i in user.avatars) {
-  avatarsElt.innerHTML += `<img src="${user.avatars[i]}" onclick="onAvatarClicked()" />`;
-}*/
-
-
-
-
-/*let memory-cards = document.getElementsByClassName('memory-card');
-for(let num = 0; num < 2; num++){
-      memory-cards[num].style.transform = 'none';
-}*/ 
