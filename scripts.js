@@ -37,7 +37,7 @@ function displayCard() {
   };
 };
 
-const cards = document.getElementsByClassName('memory-card');
+const cards = document.querySelectorAll('memory-card');
 let firstCard;
 
 function flipCard() {
