@@ -7,7 +7,7 @@
   body {
     height: 100vh;
     display: flex;
-    background: rgb(52, 186, 190);
+    background: rgb(237, 237, 241);
   }
   
   #memory-game {
@@ -47,7 +47,7 @@
     padding: 5px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: rgb(0, 30, 53);
     backface-visibility: hidden;
   }
   
@@ -70,15 +70,15 @@
     align-items: center;
   }
 
-  #play, #reset{
+  .play, .reset{
     text-align: center;
     background-color: #060AB2;
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    margin: 0 15px;
   }
 
   .play_button, .reset_button{
-    width: 100px;
     padding: 10px 30px;
     color: white;
     display: block;
