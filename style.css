@@ -70,15 +70,15 @@
     align-items: center;
   }
 
-  #play, #reset{
+  .play, .reset{
     text-align: center;
     background-color: #060AB2;
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    margin: 0 15px;
   }
 
   .play_button, .reset_button{
-    width: 100px;
     padding: 10px 30px;
     color: white;
     display: block;
