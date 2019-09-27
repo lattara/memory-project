@@ -38,11 +38,10 @@ function displayCard() {
 };
 
 const cards = document.getElementsByClassName('memory-card');
-let firstCard;
 
 function flipCard() {
   this.classList.toggle('flip');
 }
-cards.forEach(card => card.addEventListener('click', flipCard));
+cardsElt.forEach(card => card.addEventListener('click', flipCard));
 
 
