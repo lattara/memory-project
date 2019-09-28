@@ -5,6 +5,7 @@ const double = 2;
 /*
 const cards = document.getElementsByClassName('memory-card');
 let firstCard;
+
 function flipCard() {
   this.classList.toggle('flip');
 }
@@ -27,16 +28,25 @@ const backIndex = [];
 
 let imagesElt = document.getElementById('memory-game');
 
-for (let i = 0; i < images.length; i++) {
-  for (let j = 0; j < 2; j++) {
+for(let i = 0; i < images.length; i++) {
+  for(let j = 0; j < 2; j++) {
     imagesElt.innerHTML += `<img src="${back}" style="display: block" id="back-${[i + 1]}"/>`;
     imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i + 1]}""/>`;
   };
   backIndex[i] = document.getElementById(`back-${[i + 1]}`);
   cartesIndex[i] = document.getElementById(`card-${[i + 1]}`);
 };
+
 console.log(cartesIndex);
 console.log(backIndex);
+
+
+
 function displayCard() {
   location.reload();
 };
+
+
+
+
+>>>>>>> dev
