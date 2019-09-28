@@ -3,78 +3,49 @@ const mediumMode = 6;
 const hardMode = 8;
 const double = 2;
 /*
-const easy = { 
-  cardsSP: [
-      'images/Kenny.png',
-      'images/Cartman.png',
-      'images/Kyle.png',
-      'images/Stan.png',
-      'images/Timmy.png',
-      'images/Wendy.png',
-  ]
-};
-*/
-
-const cardsIndex = {
-  cardsImg: [
-    {
-      kenny: 'images/Kenny.png',
-      cartman: 'images/Cartman.png',
-      kyle: 'images/Kyle.png',
-      stan: 'images/Stan.png',
-      timmy: 'images/Timmy.png',
-      wendy: 'images/Wendy.png'
-    }
-  ],
-};
-
-const cardsElt = document.getElementById('memory-game');
-
-/* // boucle de base
-for (let i = 0; i < easyMode; i++) {
-  for (let j = 0; j < double; j++) {
-    cardsElt.innerHTML += `<img src="${easy.cards[i]}" />`;
-  }
-};
-
-function displayCard() {
-  alert('le bouton marche !!!')
-};
-
-// transform the loop in a function in factorisation
-function displayCard(mode) {
-  cardsElt.innerHTML = "";
-  for (let i = 0; i < mode; i++) {
-    for (let j = 0; j < double; j++) {
-      cardsElt.innerHTML += `<div class="memory-card" data-framework=""><img class="back-face" src="images/backface.jpg" alt="JS Badge" /><img class="front-face imgCard" src="${easy.cardsSP[i]}" /></div>`;
-    }
-  };
-};
-*/
-
-// function in object
-function displayCard(mode) {
-  cardsElt.innerHTML = "";
-  for (let i = 0; i < mode * 2; i++) {
-    //for (let j = 0; j < double; j++) {
-      cardsElt.innerHTML += `<div class="memory-card" onclick="flipCard()"><img class="back-face" src="images/backface.jpg" alt="JS Badge" /><img class="front-face imgCard" src="${cardsIndex.cardsImg[i]}" /></div>`;
-    //}
-  };
-};
-
-
-
-
-<<<<<<< HEAD
 const cards = document.getElementsByClassName('memory-card');
-=======
-const cards = document.querySelectorAll('memory-card');
 let firstCard;
->>>>>>> dev
 
 function flipCard() {
   this.classList.toggle('flip');
 }
-cardsElt.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach(card => card.addEventListener('click', flipCard));
+*/
+
+const back = 'images/backface.jpg';
+
+const images = [
+  'images/Kenny.png',
+  'images/Cartman.png',
+  'images/Kyle.png',
+  'images/Stan.png',
+  'images/Timmy.png',
+  'images/Wendy.png',
+]
+
+const cartesIndex = [];
+const backIndex = [];
+
+let imagesElt = document.getElementById('memory-game');
+
+for(let i = 0; i < images.length; i++) {
+  for(let j = 0; j < 2; j++) {
+    imagesElt.innerHTML += `<img src="${back}" style="display: block" id="back-${[i + 1]}"/>`;
+    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i + 1]}""/>`;
+  };
+  backIndex[i] = document.getElementById(`back-${[i + 1]}`);
+  cartesIndex[i] = document.getElementById(`card-${[i + 1]}`);
+};
+
+console.log(cartesIndex);
+console.log(backIndex);
+
+
+
+function displayCard() {
+  location.reload();
+};
+
+
 
 

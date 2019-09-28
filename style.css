@@ -7,7 +7,10 @@
   body {
     height: 100vh;
     display: flex;
-    background: rgb(237, 237, 241);
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-position: bottom
+
   }
   
   #memory-game {
@@ -19,7 +22,7 @@
     perspective: 1000px;
   }
 
-  .memory-card {
+  #memory-game img {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -27,13 +30,16 @@
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
     border-radius: 5px;
+    padding: 5px;
+    background-color: white;
   }
   
-  .memory-card:active {
-    transform: scale(0.97);
+  #memory-game img:active, #memory-game img:hover {
+    transform: scale(1.03);
     transition: transform .0.5s;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0);
   }
   
   .flip {
@@ -60,11 +66,9 @@
   /* ----- button ----- */
 
   #game_state{
-    position: fixed;
-    bottom: 0;
-    height: 50px;
+    height: 100%;
     background-color: gray;
-    width: 100%;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
