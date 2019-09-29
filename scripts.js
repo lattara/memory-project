@@ -5,6 +5,7 @@ const mediumMode = 6;
 const hardMode = 8;
 
 
+
 // On stocke nos images dans des tablaux.
 const back = 'images/backface.jpg';
 const imagesSingle = [
@@ -51,8 +52,10 @@ let imgToCompare = [];
 let backElmntArray = [];
 let frontElmntArray = [];
 
+// On crée une constante pour sauvegarder la fonction onCardClicked => utlisée lors du else if => pour empecher de pouvoir retourner plus de deux cartes
+const resetonCardClicked = onCardClicked;
 
-// On crée la fonction basée sur l'évenement click sur ligne 42
+// On crée la fonction basée sur l'évenement onclick="onCardClicked('${[i]}')" 
 function onCardClicked (i) {
   // On stocke l'Id de la carte cliquée
   let backElmnt = document.getElementById (`back-${[i]}`);
@@ -74,7 +77,7 @@ function onCardClicked (i) {
   // On ajoute une carte aux tableaux des comparaisons
   imgToCompare.push(images[i]);
     
-  // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est éégale à celle de la deuxième
+  // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
     //console.log("win");
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
@@ -86,10 +89,16 @@ function onCardClicked (i) {
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
     //console.log('boulet');
     // on les retourne
+    onCardClicked = false;
+    setTimeout(function(){
     firstCardFront.style.display = "none";
-    secondCardFront.style.display = "none";
     firstCardBack.style.display = "block";
+    secondCardFront.style.display = "none";
     secondCardBack.style.display = "block";
+    onCardClicked = resetonCardClicked;}, 1500);
+    
+
+
     // on réinitilaise les tableaux pour pouvoir réutiliser la fonction de comparaison et de retournement.
     backElmntArray = [];
     frontElmntArray = [];
