@@ -1,45 +1,54 @@
+// Création de constante pour pouvoir générer un nombre variable de cartes en fonction du niveau choisi.
+// Cette fonctionnalité est temporairement mise de coté le temps de finir de coder les élements essentiels.
 const easyMode = 4;
 const mediumMode = 6;
 const hardMode = 8;
-const double = 2;
 
-
+// On stocke nos images dans des tablaux.
 const back = 'images/backface.jpg';
-
-const images = [
+const imagesSingle = [
   'images/Kenny.png',
   'images/Cartman.png',
   'images/Kyle.png',
   'images/Stan.png',
   'images/Timmy.png',
   'images/Wendy.png',
-]
+];
 
-const cartesIndex = [];
-const backIndex = [];
+// On crée un tableau "images", puis on ajoute deux fois chaque carte autant de fois qu'il y a de cartes 
+// dans le tableau "imagesSingle".
+let images = [];
+for (let j = 0 ; j < imagesSingle.length ; j++) {
+  images.push(imagesSingle[j]);
+  images.push(imagesSingle[j]);
+};
 
+// On crée une fonction pour random les cartes
+function shuffle(array) {
+  array.sort(() => Math.floor(Math.random() * images.length));
+};
+shuffle(images);
+
+// On stocke dans imagesElmnt le lien de ciblage de la zone d'insertion des balises images
 let imagesElt = document.getElementById('memory-game');
 
+// 
 for(let i = 0; i < images.length; i++) {
-  for(let j = 0; j < 2; j++) {
-    imagesElt.innerHTML += `<img class="front" onclick=“onCardClicked(’${[i]}’)”  style="display: none" src="${back}"  id="back-${[i]}"/>`;
-    imagesElt.innerHTML += `<img class="back" onclick=“onCardClicked(’${[i]}’)”  style="display: block" src="${images[i]}" id="front-${[i]}"/>`;
-  };
-  backIndex[i] = document.getElementById(`back-${[i]}`);
-  cartesIndex[i] = document.getElementById(`card-${[i]}`);
+    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}')" src="${back}" style="display: block" id="back-${[i]}" />`;
+    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" />`;
 };
 
-console.log(cartesIndex);
-console.log(backIndex);
+// Fonction permettant le retournement des cartes : En fonction de l'index (i) (!! attention pas ([i]) sinon ([10])=> (1)!!), 
+// on stock dans les variables backElmnt et frontElmnt le lien de ciblage du recto et du verso des cartes.
+// Enfin, on modifie le CSS.
+function onCardClicked (i) {
+  let backElmnt = document.getElementById (`back-${[i]}`);
+  let frontElmnt = document.getElementById (`card-${[i]}`);
+  backElmnt.style.display = 'none';
+  frontElmnt.style.display = 'block';
+};
 
+// Fonction permettant de reset les cartes retounées
 function displayCard() {
   location.reload();
-};
-
-
-function onCardClicked ([i]) {
-  let backElt = document.getElementById (`back-${[i]}`);
-  let frontElt = document.getElementById (`front-${[i]}`);
-  console.log(backElt)
-  console.log(frontElt);
 };

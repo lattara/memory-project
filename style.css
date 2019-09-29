@@ -1,3 +1,24 @@
+/* ---------------------
+fonts south park like
+---------------------- */
+
+@font-face {
+  font-family: 'zed_saidregular';
+  src: url('fonts/zed_said/zed_said-webfont.woff2') format('woff2'),
+       url('fonts/zed_said/zed_said-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cibolaregular';
+  src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+       url('fonts/south-park/cibola-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -68,26 +89,28 @@
 
   #game_state{
     height: 100%;
-    background-color: gray;
+    background-color: rgb(170, 170, 170, 0.6);
     width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
   }
 
   .play, .reset{
     text-align: center;
-    background-color: #060AB2;
+    background-color: rgb(107, 71, 5);
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     margin: 0 15px;
   }
 
   .play_button, .reset_button{
-    padding: 10px 30px;
-    color: white;
+    padding: 10px 20px;
+    color: black;
     display: block;
     text-decoration: none;
+    font-family: 'cibolaregular';
   }
 
   .play_button:active, .reset_button:active {
