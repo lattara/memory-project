@@ -31,6 +31,7 @@ function shuffle(array) {
   array.sort(() => Math.floor(Math.random() * images.length));
 };
 shuffle(images);
+console.log(images);
 
 
 // On stocke dans imagesElmnt le lien de ciblage de la zone d'insertion des balises images
@@ -52,8 +53,9 @@ let backElmntArray = [];
 let frontElmntArray = [];
 
 
-// On crée la fonction basée sur l'évenement click sur ligne 42
+// On crée la fonction basée sur l'évenement click sur ligne 43
 function onCardClicked (i) {
+  onCardClicked = true;
   // On stocke l'Id de la carte cliquée
   let backElmnt = document.getElementById (`back-${[i]}`);
   let frontElmnt = document.getElementById (`card-${[i]}`);
@@ -84,12 +86,16 @@ function onCardClicked (i) {
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
+    onCardClicked = false;
     //console.log('boulet');
-    // on les retourne
-    firstCardFront.style.display = "none";
-    secondCardFront.style.display = "none";
-    firstCardBack.style.display = "block";
-    secondCardBack.style.display = "block";
+    // on les retourne avec un timer
+    setTimeout(function(){
+      firstCardFront.style.display = "none";
+      secondCardFront.style.display = "none";
+      firstCardBack.style.display = "block";
+      secondCardBack.style.display = "block";
+      onCardClicked = true;
+    }, 1500);
     // on réinitilaise les tableaux pour pouvoir réutiliser la fonction de comparaison et de retournement.
     backElmntArray = [];
     frontElmntArray = [];
