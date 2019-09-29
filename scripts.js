@@ -98,3 +98,7 @@ function onCardClicked (i) {
 };
 
 
+// Fonction permettant de reset les cartes retounées
+function displayCard() {
+  location.reload();
+};
