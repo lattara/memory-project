@@ -7,7 +7,7 @@ const hardMode = 8;
 
 
 // On stocke nos images dans des tablaux.
-const back = 'images/backface.jpg';
+const back = 'images/verso.jpg';
 const imagesSingle = [
   'images/Kenny.png',
   'images/Cartman.png',
@@ -70,8 +70,8 @@ function onCardClicked (i) {
 
   // On transfert l'Id dans une variable
   let firstCardFront = frontElmntArray[0];
-  let secondCardFront = frontElmntArray[1];
   let firstCardBack = backElmntArray[0];
+  let secondCardFront = frontElmntArray[1];
   let secondCardBack = backElmntArray[1];
   
   // On ajoute une carte aux tableaux des comparaisons
@@ -79,7 +79,6 @@ function onCardClicked (i) {
     
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
-    //console.log("win");
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
@@ -87,18 +86,15 @@ function onCardClicked (i) {
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
-    //console.log('boulet');
     // on les retourne
     onCardClicked = false;
     setTimeout(function(){
-    firstCardFront.style.display = "none";
-    firstCardBack.style.display = "block";
-    secondCardFront.style.display = "none";
-    secondCardBack.style.display = "block";
-    onCardClicked = resetonCardClicked;}, 1500);
-    
-
-
+      firstCardFront.style.display = "none";
+      firstCardBack.style.display = "block";
+      secondCardFront.style.display = "none";
+      secondCardBack.style.display = "block";
+      onCardClicked = resetonCardClicked;
+    }, 1500);
     // on réinitilaise les tableaux pour pouvoir réutiliser la fonction de comparaison et de retournement.
     backElmntArray = [];
     frontElmntArray = [];
