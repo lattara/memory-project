@@ -16,6 +16,8 @@ const imagesSingle = [
   'images/Timmy.png',
   'images/Wendy.png',
 ];
+let name = `${imagesSingle['']}`;
+console.log(name);  
 
 // On crée un tableau "images", puis on ajoute deux fois chaque carte autant de fois qu'il y a de cartes 
 // dans le tableau "imagesSingle".
@@ -31,28 +33,32 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 let imagesElt = document.getElementById('memory-game');
 
 // 
+
 for(let i = 0; i < images.length; i++) {
     imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}')" src="${back}" style="display: block" id="back-${[i]}"/>`;
-    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}"/>`;
+    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}"/>`;            
   };
+
+
 
 // Fonction permettant le retournement des cartes : En fonction de l'index (i) (!! attention pas ([i]) sinon ([10])=> (1)!!), 
 // on stock dans les variables backElmnt et frontElmnt le lien de ciblage du recto et du verso des cartes.
 // Enfin, on modifie le CSS.
-function onCardClicked (i) {
-  let backElmnt = document.getElementById (`back-${[i]}`);
-  let frontElmnt = document.getElementById (`card-${[i]}`);
-  backElmnt.style.display = 'none';
-  frontElmnt.style.display = 'block';
+
+
+let objet = {
+click: function onCardClicked(i) {
+        let backElmnt = document.getElementById(`back-${[i]}`);
+        let frontElmnt = document.getElementById(`card-${[i]}`);
+        backElmnt.style.display = 'none';
+        frontElmnt.style.display = 'block';}
 }
-
-
+for(let click in objet){
+  if (typeof(objet[click]) === 'function'){
+  objet[click]()}
+}
 
 // Fonction permettant de reset les cartes retounées
 function displayCard() {
   location.reload();
 };
-
-
-
-
