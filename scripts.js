@@ -62,3 +62,4 @@ for(let click in objet){
 function displayCard() {
   location.reload();
 };
+
