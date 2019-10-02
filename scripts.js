@@ -19,14 +19,17 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 };
 // Initialise la varaiable du score puis fonction a appelé pour le calcul du score. 
 //Enfin pointage de la div score.
-let score = 0
+let score = 0;
 function addScore() {
   return score +=1;
 }
 let scoreElt = document.getElementById('score');
 
-
-
+let count = 0;
+function tryCount() {
+  return count += 1  ;
+}
+let countElt = document.getElementById('count');
 // On crée une fonction pour random les cartes
 function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
@@ -93,6 +96,8 @@ function onCardClicked (i) {
     // Appel la fonction du calcul du score et affiche le score dans le HTML
     addScore();
     scoreElt.innerHTML = (`<p> Score player : ${score} </p>`)
+    tryCount();
+    countElt.innerHTML =(`<p> Try : ${count} </p>` )
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
@@ -117,6 +122,8 @@ function onCardClicked (i) {
     backElmntArray = [];
     frontElmntArray = [];
     imgToCompare = [];
+    tryCount();
+    countElt.innerHTML = (`<p> Number of tries : ${count} </p>`)
   };
 };
 
