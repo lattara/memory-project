@@ -53,7 +53,7 @@ fonts south park like
     box-shadow: 1px 1px 3px rgb(0, 0, 0);
     border-radius: 5px;
     padding: 5px;
-    background-color: white;
+    background-color: rgb(8, 6, 45);
   }
   
   #memory-game img:active, #memory-game img:hover {
@@ -122,6 +122,9 @@ fonts south park like
 
 
   /* ----- avatar styles ----- */
+  .imgClass{
+    cursor: pointer;
+  }
 
   #cartmanfront{
     height: 100px;
