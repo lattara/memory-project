@@ -29,7 +29,7 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 
 
 // On crée une fonction pour random les cartes
-/*function shuffle(array) {
+function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -37,11 +37,7 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
     array[j] = temp;
   }
 };
-shuffle(images);*/
-
-//initialisation des variables pour changement de joueurs
-let playerOne = true
-let playerTwo = false
+shuffle(images);
 
 // On stocke dans imagesElmnt le lien de ciblage de la zone d'insertion des balises images
 let imagesElt = document.getElementById('memory-game');
@@ -114,19 +110,6 @@ function onCardClicked (i) {
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
     //console.log('boulet');
-
-    //Changement de joueur
-    if (playerOne === true){
-      playerOne = false
-      playerTwo = true
-    } 
-    else {
-      playerOne = true
-      playerTwo = false
-    }
-
-    console.log("player one " + playerOne)
-    console.log("player two " + playerTwo)
 
     // on les retourne
     onCardClicked = false;
