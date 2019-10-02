@@ -120,6 +120,7 @@ fonts south park like
     box-shadow: 0;
   }
 
+
   #modal1{
     width: 500px;
     bottom: 35vh;
@@ -220,6 +221,9 @@ fonts south park like
   float: right;
 }
 
+  .imgClass{
+    cursor: pointer;
+  }
 
 
 

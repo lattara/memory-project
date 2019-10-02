@@ -1,13 +1,5 @@
-// Création de constante pour pouvoir générer un nombre variable de cartes en fonction du niveau choisi.
-// Cette fonctionnalité est temporairement mise de coté le temps de finir de coder les élements essentiels.
-const easyMode = 4;
-const mediumMode = 6;
-const hardMode = 8;
-
-
-
 // On stocke nos images dans des tablaux.
-const back = 'images/verso.jpg';
+const back = 'images/backface.jpg';
 const imagesSingle = [
   'images/Kenny.png',
   'images/Cartman.png',
@@ -25,8 +17,19 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
   images.push(imagesSingle[j]);
   images.push(imagesSingle[j]);
 };
+// Initialise la varaiable du score puis fonction a appelé pour le calcul du score. 
+//Enfin pointage de la div score.
+let score = 0;
+function addScore() {
+  return score +=1;
+}
+let scoreElt = document.getElementById('score');
 
-
+let count = 0;
+function tryCount() {
+  return count += 1  ;
+}
+let countElt = document.getElementById('count');
 // On crée une fonction pour random les cartes
 function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
@@ -38,18 +41,14 @@ function shuffle(array) {
 };
 shuffle(images);
 
-//initialisation des variables pour changement de joueurs
-let playerOne = true
-let playerTwo = false
-
 // On stocke dans imagesElmnt le lien de ciblage de la zone d'insertion des balises images
 let imagesElt = document.getElementById('memory-game');
 
 
 // On génére les Ids des cartes
 for(let i = 0; i < images.length; i++) {
-    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}')" src="${back}" style="display: block" id="back-${[i]}" />`;
-    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" />`;
+    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}');" src="${back}" style="display: block" id="back-${[i]}" class="imgClass"/>`;
+    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" class="imgClass" />`;
 };
 
 
@@ -78,59 +77,53 @@ function onCardClicked (i) {
 
   // On transfert l'Id dans une variable
   let firstCardFront = frontElmntArray[0];
-  let firstCardBack = backElmntArray[0];
   let secondCardFront = frontElmntArray[1];
+  let firstCardBack = backElmntArray[0];
   let secondCardBack = backElmntArray[1];
+
+
   
   // On ajoute une carte aux tableaux des comparaisons
   imgToCompare.push(images[i]);
-    
+  
+  
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
 
-// changement de couleur des cartes gagantes en fonction du joueur actif
-    if (playerOne === true) {
-      firstCardFront.style.backgroundColor = "red";
-      secondCardFront.style.backgroundColor = "red";
-    } else {
-      firstCardFront.style.backgroundColor = "blue";
-      secondCardFront.style.backgroundColor = "blue";
-    }
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
+    // Appel la fonction du calcul du score et affiche le score dans le HTML
+    addScore();
+    scoreElt.innerHTML = (`<p> Score player : ${score} </p>`)
+    tryCount();
+    countElt.innerHTML =(`<p> Try : ${count} </p>` )
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
+
+   
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
-
-    //Changement de joueur
-    if (playerOne === true){
-      playerOne = false
-      playerTwo = true
-    } 
-    else {
-      playerOne = true
-      playerTwo = false
-    }
-
-    console.log("player one " + playerOne)
-    console.log("player two " + playerTwo)
+    //console.log('boulet');
 
     // on les retourne
     onCardClicked = false;
     setTimeout(function(){
-      firstCardFront.style.display = "none";
-      firstCardBack.style.display = "block";
-      secondCardFront.style.display = "none";
-      secondCardBack.style.display = "block";
-      onCardClicked = resetonCardClicked;
-    }, 1500);
+    firstCardFront.style.display = "none";
+    firstCardBack.style.display = "block";
+    secondCardFront.style.display = "none";
+    secondCardBack.style.display = "block";
+    onCardClicked = resetonCardClicked;}, 1500);
+    
+
+
     // on réinitilaise les tableaux pour pouvoir réutiliser la fonction de comparaison et de retournement.
     backElmntArray = [];
     frontElmntArray = [];
     imgToCompare = [];
+    tryCount();
+    countElt.innerHTML = (`<p> Number of tries : ${count} </p>`)
   };
 };
 
@@ -139,3 +132,8 @@ function onCardClicked (i) {
 function displayCard() {
   location.reload();
 };
+
+
+function randomNumber(number) {  
+  return Math.floor(Math.random() * number);
+}
