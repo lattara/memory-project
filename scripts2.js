@@ -43,9 +43,20 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
   images.push(imagesSingle[j]);
 };
 
+let score1 = 0;
+let score2 = 0;
 
+function firstPlayer() {
+  return score1 += 1;
+}
+let score1Elt = document.getElementById('score1');
+
+function secondPlayer() {
+  return score2 += 1;
+}
+let score2Elt = document.getElementById('score2');
 // On crée une fonction pour random les cartes
-function shuffle(array) {
+/*function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -53,7 +64,7 @@ function shuffle(array) {
     array[j] = temp;
   }
 };
-shuffle(images);
+shuffle(images);*/  
 
 //initialisation des variables pour changement de joueurs
 let playerOne = true
@@ -103,9 +114,7 @@ function onCardClicked (i) {
   imgToCompare.push(images[i]);
     
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
-  if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
-
-
+  if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) { 
 // changement de couleur des cartes gagantes en fonction du joueur actif
     if (playerOne === true) {
       firstCardFront.style.backgroundColor = "#074a12";
@@ -113,7 +122,8 @@ function onCardClicked (i) {
       let audioTemp = audioLibrary1P[randomNumber(audioLibrary1P.length)]
       let audio = new Audio(`${audioTemp}`)
       audio.play();
-
+      firstPlayer();
+      score1Elt.innerHTML = (`<p> Player One Score: ${score1}) </p>`)
 
     } else {
       firstCardFront.style.backgroundColor = "#730000";
@@ -121,10 +131,9 @@ function onCardClicked (i) {
       let audioTemp = audioLibrary2P[randomNumber(audioLibrary2P.length)]
       let audio = new Audio(`${audioTemp}`)
       audio.play();
-
+      secondPlayer();
+      score2Elt.innerHTML = (`<p> Player Two Score: ${score2} </p>`) 
     }
-
-
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
@@ -133,17 +142,15 @@ function onCardClicked (i) {
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
-
     //Changement de joueur
-    if (playerOne === true){
+    if (playerOne === true) {
       playerOne = false
       playerTwo = true
-    } 
+    }
     else {
       playerOne = true
       playerTwo = false
     }
-
     // on les retourne
     onCardClicked = false;
     setTimeout(function(){
@@ -159,14 +166,10 @@ function onCardClicked (i) {
     imgToCompare = [];
   };
 };
-
-
-
 // Fonction permettant de reset les cartes retounées
 function displayCard() {
   location.reload();
 };
-
-function randomNumber(number) {  
+function randomNumber(number) {
   return Math.floor(Math.random() * number);
 }
