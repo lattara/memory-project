@@ -17,6 +17,8 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
   images.push(imagesSingle[j]);
   images.push(imagesSingle[j]);
 };
+// Initialise la varaiable du score puis fonction a appelé pour le calcul du score. 
+//Enfin pointage de la div score.
 let score = 0
 function addScore() {
   return score +=1;
@@ -88,7 +90,9 @@ function onCardClicked (i) {
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
-
+    // Appel la fonction du calcul du score et affiche le score dans le HTML
+    addScore();
+    scoreElt.innerHTML = (`<p> Score player : ${score} </p>`)
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
