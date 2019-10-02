@@ -92,6 +92,7 @@ fonts south park like
     background-color: rgb(170, 170, 170, 0.6);
     width: 250px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
@@ -120,5 +121,34 @@ fonts south park like
   }
 
 
+  /* ----- avatar styles ----- */
 
+  #cartmanfront{
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display:block;
+  }
+  #cartmanback{
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display:none;
+  }
 
+  #kennyfront{
+    height: 140px;
+    width: 170px;
+    margin-bottom: 20px;
+    display:block;
+  }
+  #kennyback{
+    height: 140px;
+    width: 170px;
+    margin-bottom: 20px;
+    display:none;
+  }
+
+  

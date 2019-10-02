@@ -28,7 +28,7 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 
 
 // On crée une fonction pour random les cartes
-function shuffle(array) {
+/*function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -37,7 +37,7 @@ function shuffle(array) {
   }
 };
 shuffle(images);
-
+*/
 //initialisation des variables pour changement de joueurs
 let playerOne = true
 let playerTwo = false
@@ -88,27 +88,33 @@ function onCardClicked (i) {
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
 
+    
+    
 
     
 // changement de couleur des cartes gagantes en fonction du joueur actif
     if (playerOne === true) {
       firstCardFront.style.backgroundColor = "red";
       secondCardFront.style.backgroundColor = "red";
+      killKenny();
     } else {
       firstCardFront.style.backgroundColor = "blue";
       secondCardFront.style.backgroundColor = "blue";
+      showButt();
     }
-
+    
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
+
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
     //console.log('boulet');
-
+    
     //Changement de joueur
+    
     if (playerOne === true){
       playerOne = false
       playerTwo = true
@@ -123,15 +129,15 @@ function onCardClicked (i) {
 
     // on les retourne
     onCardClicked = false;
+
     setTimeout(function(){
     firstCardFront.style.display = "none";
     firstCardBack.style.display = "block";
     secondCardFront.style.display = "none";
     secondCardBack.style.display = "block";
-    onCardClicked = resetonCardClicked;}, 1500);
-    
+    onCardClicked = resetonCardClicked;}, 800);
 
-
+   
     // on réinitilaise les tableaux pour pouvoir réutiliser la fonction de comparaison et de retournement.
     backElmntArray = [];
     frontElmntArray = [];
@@ -144,3 +150,39 @@ function onCardClicked (i) {
 function displayCard() {
   location.reload();
 };
+
+
+//score Bar avatar setup
+
+function showButt (){
+
+    avatarFront = document.getElementById('cartmanfront');
+    avatarBack = document.getElementById('cartmanback');
+    avatarFront.style.display='none';
+    avatarBack.style.display = 'block'; 
+
+  setTimeout(function(){ 
+    avatarFront.style.display='block';
+    avatarBack.style.display = 'none';  }, 800);
+
+}
+
+
+function killKenny(){
+  avatarFront = document.getElementById('kennyfront');
+  avatarBack = document.getElementById('kennyback');
+  avatarFront.style.display='none';
+  avatarBack.style.display = 'block'; 
+
+  setTimeout(function(){ 
+    avatarFront.style.display='block';
+    avatarBack.style.display = 'none';  }, 800);
+ }
+
+
+
+
+
+
+
+   
