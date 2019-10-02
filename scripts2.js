@@ -20,6 +20,16 @@ const imagesSingle = [
   'images/Craig.png',
 ];
 
+// bibliotèque de son
+let audioLibrary = [
+  'CartmanSounds/Cartman1.mp3',
+  'CartmanSounds/Cartman2.mp3',
+  'CartmanSounds/Cartman3.mp3',
+  'CartmanSounds/Cartman4.mp3',
+  'CartmanSounds/Cartman5.mp3',
+  'CartmanSounds/Cartman6.mp3',
+];
+
 
 // On crée un tableau "images", puis on ajoute deux fois chaque carte autant de fois qu'il y a de cartes 
 // dans le tableau "imagesSingle".
@@ -90,6 +100,19 @@ function onCardClicked (i) {
     
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
+    
+    
+    // son joué en fonction du joueur gagnant
+    if (playerOne === true){
+      let audio2 = audioLibrary[randomNumber(audioLibrary.length)]
+      let audio = new Audio(`${audio2}`)
+      audio.play();
+      console.log(audio)
+    } else {
+      
+    }
+
+
 
 // changement de couleur des cartes gagantes en fonction du joueur actif
     if (playerOne === true) {
@@ -117,9 +140,6 @@ function onCardClicked (i) {
       playerOne = true
       playerTwo = false
     }
-
-    console.log("player one " + playerOne)
-    console.log("player two " + playerTwo)
 
     // on les retourne
     onCardClicked = false;

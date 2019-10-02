@@ -119,6 +119,8 @@ fonts south park like
     box-shadow: 0;
   }
 
-
+  .imgClass{
+    cursor: pointer;
+  }
 
 
