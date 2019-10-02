@@ -1,11 +1,3 @@
-// Création de constante pour pouvoir générer un nombre variable de cartes en fonction du niveau choisi.
-// Cette fonctionnalité est temporairement mise de coté le temps de finir de coder les élements essentiels.
-const easyMode = 4;
-const mediumMode = 6;
-const hardMode = 8;
-
-
-
 // On stocke nos images dans des tablaux.
 const back = 'images/verso.jpg';
 const imagesSingle = [
