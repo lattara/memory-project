@@ -31,6 +31,7 @@ fonts south park like
     background-image: url(images/bg.jpg);
     background-size: cover;
     background-position: bottom left;
+    overflow: hidden;
   }
   
   #memory-game {
@@ -118,6 +119,106 @@ fonts south park like
     transition: transform .0.5s;
     box-shadow: 0;
   }
+
+  #modal1{
+    width: 500px;
+    bottom: 35vh;
+    left: calc(50% - 125px);
+    text-align: center;
+    background-image: url('images/sign.jpg');
+    background-color: #6d5749;
+    padding: 30px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+    position: absolute;
+    -webkit-animation: pop-win 4s ease;
+    -moz-animation:    pop-win 4s ease;
+    -o-animation:      pop-win 4s ease;
+    animation:         pop-win 4s ease;
+} 
+
+@-webkit-keyframes pop-win {
+  0%   { bottom: -200px; }
+  75%   { bottom: -200px; }
+  85% { bottom: 40vh; }
+  90% { bottom: 35vh; }
+  95% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@-moz-keyframes pop-win {
+  0%   { bottom: -200px; }
+  75%   { bottom: -200px; }
+  85% { bottom: 40vh; }
+  90% { bottom: 35vh; }
+  95% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@-o-keyframes pop-win {
+  0%   { bottom: -200px; }
+  75%   { bottom: -200px; }
+  85% { bottom: 40vh; }
+  90% { bottom: 35vh; }
+  95% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@keyframes pop-win {
+  0%   { bottom: -200px; }
+  75%   { bottom: -200px; }
+  85% { bottom: 40vh; }
+  90% { bottom: 35vh; }
+  95% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+
+#kennywin {
+  margin-top: 15px;
+  width: 20%;
+  float: left;
+}
+
+.modal-content p{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-family: 'zed_saidregular'
+}
+
+.modal-content h2{
+  font-family: 'cibolaregular'
+
+}
+
+.close a {
+  text-align: center;
+  background-color: rgb(112, 72, 18);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  margin: 0 15px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-family: 'cibolaregular';
+  text-decoration: none;
+
+}
+.close h2 {
+  font-family: 'cibolaregular'
+}
+
+.close a:visited {
+  color: inherit;
+  
+}
+
+.modal-content {
+  padding: 10px 30px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-decoration: none;
+
+}
+#cartmanwin {
+  margin-top: 30px;
+  width: 20%;
+  float: right;
+}
 
 
 
