@@ -81,6 +81,9 @@ function onCardClicked (i) {
   let firstCardBack = backElmntArray[0];
   let secondCardFront = frontElmntArray[1];
   let secondCardBack = backElmntArray[1];
+
+
+
   
   // On ajoute une carte aux tableaux des comparaisons
   imgToCompare.push(images[i]);
@@ -92,6 +95,7 @@ function onCardClicked (i) {
     if (playerOne === true) {
       firstCardFront.style.backgroundColor = "red";
       secondCardFront.style.backgroundColor = "red";
+
     } else {
       firstCardFront.style.backgroundColor = "blue";
       secondCardFront.style.backgroundColor = "blue";
@@ -99,9 +103,12 @@ function onCardClicked (i) {
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
+    
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
+
+   
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
 
