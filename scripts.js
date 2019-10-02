@@ -25,6 +25,12 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
   images.push(imagesSingle[j]);
   images.push(imagesSingle[j]);
 };
+let score = 0
+function addScore() {
+  return score +=1;
+}
+let scoreElt = document.getElementById('score');
+
 
 
 // On crée une fonction pour random les cartes
@@ -73,15 +79,22 @@ function onCardClicked (i) {
   let secondCardFront = frontElmntArray[1];
   let firstCardBack = backElmntArray[0];
   let secondCardBack = backElmntArray[1];
+
   
   // On ajoute une carte aux tableaux des comparaisons
   imgToCompare.push(images[i]);
-    
+  
+  
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
     //console.log("win");
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
+    addScore();  
+    console.log(score);
+    scoreElt.innerHTML = (`<p> Score player : ${score} </p>`)
+    
+   
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
