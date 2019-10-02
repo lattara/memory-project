@@ -7,7 +7,7 @@ const hardMode = 8;
 
 
 // On stocke nos images dans des tablaux.
-const back = 'images/backface.jpg';
+const back = 'images/verso.jpg';
 const imagesSingle = [
   'images/Kenny.png',
   'images/Cartman.png',
@@ -35,10 +35,18 @@ let scoreElt = document.getElementById('score');
 
 // On crée une fonction pour random les cartes
 function shuffle(array) {
-  array.sort(() => Math.floor(Math.random() * images.length));
+  for(let i = array.length -1; i > 0; i--){
+    const j = Math.floor(Math.random() * i);
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 };
 shuffle(images);
 
+//initialisation des variables pour changement de joueurs
+let playerOne = true
+let playerTwo = false
 
 // On stocke dans imagesElmnt le lien de ciblage de la zone d'insertion des balises images
 let imagesElt = document.getElementById('memory-game');
@@ -76,8 +84,8 @@ function onCardClicked (i) {
 
   // On transfert l'Id dans une variable
   let firstCardFront = frontElmntArray[0];
-  let secondCardFront = frontElmntArray[1];
   let firstCardBack = backElmntArray[0];
+  let secondCardFront = frontElmntArray[1];
   let secondCardBack = backElmntArray[1];
 
   
@@ -87,7 +95,16 @@ function onCardClicked (i) {
   
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
-    //console.log("win");
+
+// changement de couleur des cartes gagantes en fonction du joueur actif
+    if (playerOne === true) {
+      firstCardFront.style.backgroundColor = "red";
+      secondCardFront.style.backgroundColor = "red";
+    } else {
+      firstCardFront.style.backgroundColor = "blue";
+      secondCardFront.style.backgroundColor = "blue";
+    }
+
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
     addScore();  
@@ -100,18 +117,29 @@ function onCardClicked (i) {
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
-    //console.log('boulet');
+
+    //Changement de joueur
+    if (playerOne === true){
+      playerOne = false
+      playerTwo = true
+    } 
+    else {
+      playerOne = true
+      playerTwo = false
+    }
+
+    console.log("player one " + playerOne)
+    console.log("player two " + playerTwo)
+
     // on les retourne
     onCardClicked = false;
     setTimeout(function(){
-    firstCardFront.style.display = "none";
-    firstCardBack.style.display = "block";
-    secondCardFront.style.display = "none";
-    secondCardBack.style.display = "block";
-    onCardClicked = resetonCardClicked;}, 1500);
-    
-
-
+      firstCardFront.style.display = "none";
+      firstCardBack.style.display = "block";
+      secondCardFront.style.display = "none";
+      secondCardBack.style.display = "block";
+      onCardClicked = resetonCardClicked;
+    }, 1500);
     // on réinitilaise les tableaux pour pouvoir réutiliser la fonction de comparaison et de retournement.
     backElmntArray = [];
     frontElmntArray = [];
