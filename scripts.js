@@ -1,11 +1,3 @@
-// Création de constante pour pouvoir générer un nombre variable de cartes en fonction du niveau choisi.
-// Cette fonctionnalité est temporairement mise de coté le temps de finir de coder les élements essentiels.
-const easyMode = 4;
-const mediumMode = 6;
-const hardMode = 8;
-
-
-
 // On stocke nos images dans des tablaux.
 const back = 'images/backface.jpg';
 const imagesSingle = [
@@ -15,6 +7,15 @@ const imagesSingle = [
   'images/Stan.png',
   'images/Timmy.png',
   'images/Wendy.png',
+];
+
+let audioLibrary = [
+  'CartmanSounds/Cartman1.mp3',
+  'CartmanSounds/Cartman2.mp3',
+  'CartmanSounds/Cartman3.mp3',
+  'CartmanSounds/Cartman4.mp3',
+  'CartmanSounds/Cartman5.mp3',
+  'CartmanSounds/Cartman6.mp3',
 ];
 
 
@@ -28,7 +29,7 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 
 
 // On crée une fonction pour random les cartes
-function shuffle(array) {
+/*function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -36,7 +37,7 @@ function shuffle(array) {
     array[j] = temp;
   }
 };
-shuffle(images);
+shuffle(images);*/
 
 //initialisation des variables pour changement de joueurs
 let playerOne = true
@@ -48,8 +49,8 @@ let imagesElt = document.getElementById('memory-game');
 
 // On génére les Ids des cartes
 for(let i = 0; i < images.length; i++) {
-    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}')" src="${back}" style="display: block" id="back-${[i]}" />`;
-    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" />`;
+    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}');" src="${back}" style="display: block" id="back-${[i]}" class="imgClass"/>`;
+    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" class="imgClass" />`;
 };
 
 
@@ -87,8 +88,14 @@ function onCardClicked (i) {
     
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
-
-
+    if (playerOne === true){
+      let audio2 = audioLibrary[randomNumber(audioLibrary.length)]
+      let audio = new Audio(`${audio2}`)
+      audio.play();
+      console.log(audio)
+    } else {
+      
+    }
     
 // changement de couleur des cartes gagantes en fonction du joueur actif
     if (playerOne === true) {
@@ -144,3 +151,8 @@ function onCardClicked (i) {
 function displayCard() {
   location.reload();
 };
+
+
+function randomNumber(number) {  
+  return Math.floor(Math.random() * number);
+}
