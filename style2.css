@@ -311,7 +311,9 @@ fonts south park like
         margin: -50vh auto 0;
         text-align: center;
         background-color: #6d5749;
+        border: solid;
         padding: 30px;
+        border-radius: 5px;
         box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
         position: absolute;
         -webkit-animation: pop-choices 4s ease; /* Safari 4+ */
@@ -473,25 +475,34 @@ fonts south park like
     .modal-content p{
       margin-bottom: 20px;
       margin-top: 10px;
+      font-size: 16px;
       font-family: 'zed_saidregular'
     }
 
     .modal-content h2{
-      font-family: 'cibolaregular'
+      font-family: 'cibolaregular';
+      font-size: 40px;
+      margin-bottom: 16px;
 
     }
+
 
     .close a {
       text-align: center;
       background-color: rgb(112, 72, 18);
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-      margin: 0 15px;
+      margin: 0 30px;
       padding: 10px 20px;
       margin-top: 20px;
       font-family: 'cibolaregular';
       text-decoration: none;
+      margin-left: 30px;
 
+    }
+
+    .close a:hover {
+        transform: scale(1.03);
     }
     .close h2 {
       font-family: 'cibolaregular'
@@ -515,7 +526,7 @@ fonts south park like
       width: 30%;
       float: left;
     }
-
-    
-
+    a:hover {
+      transform: scale(1.03);
+    }
 
