@@ -95,6 +95,7 @@ fonts south park like
       width: 250px;
       display: flex;
       flex-direction: column;
+      justify-content:space-around;
       align-items: center;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     }
@@ -323,21 +324,20 @@ fonts south park like
     }
 
     /* avatar Styles  */
-
     #kennyName{
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    
     #kennyfront{
       height: 150px;
       width: 200px;
-      margin-bottom: 20px;
       display:block;
     }
+
     #kennyback{
       height: 150px;
       width: 200px;
-      margin-bottom: 20px;
       display:none;
     }
 
@@ -348,19 +348,17 @@ fonts south park like
     #cartmanfront{
       height: 150px;
       width: 160px;
-      margin-bottom: 20px;
       display:block;
     }
 
     #cartmanback{
       height: 150px;
       width: 160px;
-      margin-bottom: 20px;
       display:none;
     }
 
-    .kennyNameClass, .cartmanNameClass {
-      font-size: 3em;
+    #kennyName, #cartmanName {
+      font-size: 1em;
       font-family: 'cibolaregular';
       src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
            url('fonts/south-park/cibola-webfont.woff') format('woff');
@@ -388,7 +386,7 @@ fonts south park like
     }
 
     .changeKennyNameClass{
-      font-size: 3em;
+      font-size: 0.5em;
       font-family: 'cibolaregular';
       src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
            url('fonts/south-park/cibola-webfont.woff') format('woff');
@@ -399,7 +397,7 @@ fonts south park like
 
     }
     .changeCartmanNameClass{
-      font-size: 3em;
+      font-size: 0.5em;
       font-family: 'cibolaregular';
       src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
            url('fonts/south-park/cibola-webfont.woff') format('woff');
@@ -513,6 +511,9 @@ fonts south park like
       
     }
 
+    #memory-game{
+    cursor: url(images/KennyPointer.png), auto;
+    }
 
     .modal-content {
       padding: 10px 30px;

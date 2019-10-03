@@ -10,12 +10,13 @@
 <body>
      ​
     <section id="game_state">
+        <div id="score"></div>
         <div id ="kennyName" class="kennyNameClass">KENNY</div>  
         <div id ="avatarContainer1">
             <img src="images/KennyMcCormick.png" id ="kennyfront">
-            <img src="images/kennyAngel.png" id ="kennyback" >  
-        </div>  
-
+            <img src="images/kennyAngel.png" id ="kennyback" >              
+        </div>
+       
         <div class="scoreBar">
             Score :&nbsp;<span id="score1">0</span>
         </div>
@@ -25,21 +26,25 @@
             <img src="images/2.png" id ="cartmanfront">
             <img src="images/3.png" id ="cartmanback" >   
         </div>
-
+        
         <div class="scoreBar">
-          Score :&nbsp;<span id="score2">0</span>
-        </div>        
+            Score :&nbsp;<span id="score2">0</span>
+        </div>
 
         <div class="home_return">
-          <div class="play">
-            <a href="index.html" class="play_button">HOME</a>
+            <div class="play">
+              <a href="index.html" class="play_button">HOME</a>
+            </div>
+    
+            <div class="play">
+              <a href="#" class="play_button" onclick="displayCard()">REPLAY</a>
+            </div>
           </div>
-  
-          <div class="play">
-            <a href="#" class="play_button" onclick="displayCard()">REPLAY</a>
-          </div>
-        </div>
-    </section>
+      <div id="score1"></div>
+      <div id="score2"></div>
+
+
+</section>
     
       
     <section id="memory-game">

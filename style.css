@@ -29,7 +29,7 @@ fonts south park like
   body {
     height: 100vh;
     display: flex;
-    background-image: url(images/bg.jpg);
+    background-image: url(/images/heavenbkg.jpg);
     background-size: cover;
     background-position: bottom left;
     overflow: hidden;
@@ -55,7 +55,7 @@ fonts south park like
     box-shadow: 1px 1px 3px rgb(0, 0, 0);
     border-radius: 5px;
     padding: 5px;
-    background-color: rgb(8, 6, 45);
+    background-color: rgb(36, 34, 68);
   }
   
   #memory-game img:active, #memory-game img:hover {
@@ -75,7 +75,7 @@ fonts south park like
     padding: 5px;
     position: absolute;
     border-radius: 5px;
-    background: rgb(0, 30, 53);
+    background: rgb(49, 118, 170);
     backface-visibility: hidden;
   }
   
@@ -101,7 +101,7 @@ fonts south park like
 
   .play{
     text-align: center;
-    background-color: rgb(107, 71, 5);
+    background-color:#4A79A5;
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     margin: 0 15px;
@@ -153,7 +153,7 @@ fonts south park like
 
   .scoreBar{
     text-align: center;
-    background-color:rgb(107, 71, 5);
+    background-color:#4A79A5;
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     margin: 0 15px;
@@ -173,6 +173,7 @@ fonts south park like
     font-weight: normal;
     font-style: normal;
     color: black;
+    margin-top: 20px;
     
   }
 
@@ -204,9 +205,9 @@ fonts south park like
 
   .replayButtonClass{
     text-align: center;
-    background-color:white;
+    background-color:darkgoldenrod;
     border-radius: 5px;
-    -webkit-text-fill-color: darkgoldenrod;
+    -webkit-text-fill-color: white;
     
   }
 
