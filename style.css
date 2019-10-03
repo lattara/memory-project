@@ -1,3 +1,4 @@
+
 /* ---------------------
 fonts south park like
 ---------------------- */
@@ -120,6 +121,90 @@ fonts south park like
     box-shadow: 0;
   }
 
+ /* ----- avatar styles ----- */
+  .imgClass{
+    cursor: pointer;
+  }
+  
+  #kennyfront{
+    
+    height: 200px;
+    width: 230px;
+    margin-bottom: 20px;
+    display:block;
+    
+  }
+  #kennyback{
+
+    height: 200px;
+    width: 230px;
+    margin-bottom: 20px;
+    display:none;
+    
+  }
+
+  /* ----- scoreBar style ----- */
+
+  .scoreBar{
+    text-align: center;
+    background-color:rgb(107, 71, 5);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    margin: 0 15px;
+    padding: 30px 50px;
+    color: black;
+    display: block;
+    text-decoration: none;
+    font-family: 'cibolaregular';
+    font-size: 2em;
+  }
+
+  .playersName{
+    font-size: 4em;
+    font-family: 'cibolaregular';
+    src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+         url('fonts/south-park/cibola-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    
+  }
+
+  .whitebutton{
+    text-align: center;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 0 300px #ccc;
+    margin: 0 15px;
+    padding: 30px 50px;
+    -webkit-text-fill-color: darkgoldenrod;
+    display: block;
+    text-decoration: none;
+    font-family: 'cibolaregular';
+    font-size: 2em;
+   
+  }
+
+  .playersNameClass{
+    color: #ccc;
+    font-size: 4em;
+    font-family: 'cibolaregular';
+    src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+         url('fonts/south-park/cibola-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+  }
+
+  .replayButtonClass{
+    text-align: center;
+    background-color:white;
+    border-radius: 5px;
+    -webkit-text-fill-color: darkgoldenrod;
+    
+  }
+
+
 
   #modal1{
     width: 500px;
@@ -220,6 +305,4 @@ fonts south park like
   .imgClass{
     cursor: pointer;
   }
-
-
 

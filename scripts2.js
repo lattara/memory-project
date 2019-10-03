@@ -1,3 +1,4 @@
+
 // Création de constante pour pouvoir générer un nombre variable de cartes en fonction du niveau choisi.
 // Cette fonctionnalité est temporairement mise de coté le temps de finir de coder les élements essentiels.
 const easyMode = 4;
@@ -134,7 +135,7 @@ function onCardClicked (i) {
       modalScore();
 
       score1Elt.innerHTML = (`<p> Player One Score: ${score1}) </p>`)
-
+      killKenny();
 
     } else {
       firstCardFront.style.backgroundColor = "#730000";
@@ -145,6 +146,7 @@ function onCardClicked (i) {
       secondPlayer();
       score2Elt.innerHTML = (`<p> Player Two Score: ${score2} </p>`) 
       modalScore();
+      showButt();
     }
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
@@ -206,3 +208,41 @@ function modalScore() {
     }
     }
   }
+  
+  //avatars setup > Kenny 1st player, Cartman 2nd player
+
+function showButt (){
+
+   avatarFront = document.getElementById('cartmanfront');
+   avatarBack = document.getElementById('cartmanback');
+   avatarFront.style.display='none';
+   avatarBack.style.display = 'block'; 
+   let cartmanNameChange = document.getElementById('cartmanName');
+   cartmanNameChange.classList.add ('changeCartmanNameClass')
+
+ setTimeout(function(){ 
+   avatarFront.style.display='block';
+   avatarBack.style.display = 'none';
+   cartmanNameChange.classList.remove('changeCartmanNameClass')  
+  }, 800);
+
+ }
+
+
+function killKenny(){
+   avatarFront = document.getElementById('kennyfront');
+   avatarBack = document.getElementById('kennyback');
+   avatarFront.style.display='none';
+   avatarBack.style.display = 'block'; 
+   let kennyNameChange = document.getElementById('kennyName');
+   kennyNameChange.classList.add ('changeKennyNameClass')
+  setTimeout(function(){ 
+     avatarFront.style.display='block';
+     avatarBack.style.display = 'none'; 
+     kennyNameChange.classList.remove ('changeKennyNameClass')
+    }, 800);
+     
+  }
+ 
+
+
