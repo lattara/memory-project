@@ -31,11 +31,12 @@ fonts south park like
       background-size: cover;
       background-position: bottom left;
       display: flex;
+      overflow: hidden;
     }
     
     #memory-game {
-      width: 80%;
-      height: 640px;  
+      width: 70%;
+      height: 620px;  
       margin: auto;
       display: flex;
       flex-wrap: wrap;
@@ -45,7 +46,7 @@ fonts south park like
   
     #memory-game img {
       width: calc(16% - 10px);
-      height: calc(33.33% - 10px);
+      height: calc(30.33% - 10px);
       margin: 5px;
       position: relative;
       transform: scale(1);
@@ -331,58 +332,65 @@ fonts south park like
 
     #modal1{
       width: 500px;
-      bottom: 35vh;
       left: calc(50% - 125px);
       text-align: center;
-      border: 2px solid;
       background-image: url('images/sign.jpg');
-      background-position: center;
       background-color: #6d5749;
+      border: solid;
       padding: 30px;
+      border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
       position: absolute;
-      -webkit-animation: pop-win 4s ease;
-      -moz-animation:    pop-win 4s ease;
-      -o-animation:      pop-win 4s ease;
-      animation:         pop-win 4s ease;
+    }
+
+    #modal2{
+      width: 500px;
+      left: calc(50% - 125px);
+      text-align: center;
+      background-image: url('images/sign.jpg');
+      background-color: #6d5749;
+      border: solid;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+      position: absolute;
     }
 
     @-webkit-keyframes pop-win {
       0%   { bottom: -200px; }
-      75%   { bottom: -200px; }
-      85% { bottom: 40vh; }
-      90% { bottom: 35vh; }
-      95% { bottom: 40vh; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
     @-moz-keyframes pop-win {
       0%   { bottom: -200px; }
-      75%   { bottom: -200px; }
-      85% { bottom: 40vh; }
-      90% { bottom: 35vh; }
-      95% { bottom: 40vh; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
     @-o-keyframes pop-win {
       0%   { bottom: -200px; }
-      75%   { bottom: -200px; }
-      85% { bottom: 40vh; }
-      90% { bottom: 35vh; }
-      95% { bottom: 40vh; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
     @keyframes pop-win {
       0%   { bottom: -200px; }
-      75%   { bottom: -200px; }
-      85% { bottom: 40vh; }
-      90% { bottom: 35vh; }
-      95% { bottom: 40vh; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
 
     #kennywin {
-      margin-top: 15px;
-      width: 20%;
+      width: 30%;
       float: left;
     }
 
@@ -418,6 +426,7 @@ fonts south park like
       
     }
 
+
     .modal-content {
       padding: 10px 30px;
       color: rgb(0, 0, 0);
@@ -427,9 +436,8 @@ fonts south park like
     }
 
     #cartmanwin {
-      width: 20%;
+      width: 30%;
       float: left;
-      margin-top: 30px;
     }
 
     
