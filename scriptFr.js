@@ -52,7 +52,7 @@ for(let i = 0; i < images.length; i++) {
 };
 
 
-// On initialise le tableau qui stocke les différents identifiants (url) des images à comparer
+// On initialise le tableau qui stocke les différents identifiants (url) des images à comparer  
 let imgToCompare = [];
 
 // On initialise les tableaux qui stockent les targets links (get.elementById) des cartes comparées. Ils serviront pour le retournement des cartes si différentes
@@ -95,9 +95,9 @@ function onCardClicked (i) {
     imgToCompare = [];
     // Appel la fonction du calcul du score et affiche le score dans le HTML
     addScore();
-    scoreElt.innerHTML = (`<p> Score player : ${score} </p>`)
+    scoreElt.innerHTML = (`<p> Score: ${score} </p>`)
     tryCount();
-    countElt.innerHTML =(`<p> Try : ${count} </p>` )
+    countElt.innerHTML =(`<p> Coups : ${count} </p>` )
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
@@ -114,7 +114,7 @@ function onCardClicked (i) {
     firstCardBack.style.display = "block";
     secondCardFront.style.display = "none";
     secondCardBack.style.display = "block";
-    onCardClicked = resetonCardClicked;}, 200);
+    onCardClicked = resetonCardClicked;}, 1500);
     
 
 
@@ -122,8 +122,7 @@ function onCardClicked (i) {
     backElmntArray = [];
     frontElmntArray = [];
     imgToCompare = [];
-    tryCount();
-    countElt.innerHTML = (`<p> Number of tries : ${count} </p>`)
+
   };
 };
 

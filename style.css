@@ -55,6 +55,7 @@ fonts south park like
     border-radius: 5px;
     padding: 5px;
     background-color: rgb(8, 6, 45);
+    transform: rotate3d( 1à, 10, 10, 180deg); /* Équivalent à rotateZ(45deg) */
   }
   
   #memory-game img:active, #memory-game img:hover {
@@ -63,9 +64,7 @@ fonts south park like
     box-shadow: 3px 3px 5px rgb(0, 0, 0);
   }
   
-  .flip {
-    transform: rotateY(180deg);
-  }
+
   
   .front-face,
   .back-face {
@@ -78,9 +77,6 @@ fonts south park like
     backface-visibility: hidden;
   }
   
-  .front-face {
-    transform: rotateY(180deg);
-  }
 
 
 
