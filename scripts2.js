@@ -131,10 +131,10 @@ function onCardClicked (i) {
       audio.play();
       firstPlayer();
 
-      score1Elt.innerHTML = (`<p> Player One Score: ${score1}</p>`)
+      score1Elt.innerHTML = (`<p> ${score1}</p>`)
       modalScore();
 
-      score1Elt.innerHTML = (`<p> Player One Score: ${score1}) </p>`)
+      score1Elt.innerHTML = (`<p> ${score1}</p>`)
       killKenny();
 
     } else {
@@ -144,7 +144,7 @@ function onCardClicked (i) {
       let audio = new Audio(`${audioTemp}`)
       audio.play();
       secondPlayer();
-      score2Elt.innerHTML = (`<p> Player Two Score: ${score2} </p>`) 
+      score2Elt.innerHTML = (`<p> ${score2}</p>`) 
       modalScore();
       showButt();
     }
