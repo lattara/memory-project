@@ -21,14 +21,18 @@ const imagesSingle = [
 ];
 
 // bibliotèque de son
-let audioLibrary = [
-  'CartmanSounds/Cartman1.mp3',
-  'CartmanSounds/Cartman2.mp3',
-  'CartmanSounds/Cartman3.mp3',
-  'CartmanSounds/Cartman4.mp3',
-  'CartmanSounds/Cartman5.mp3',
-  'CartmanSounds/Cartman6.mp3',
+let audioLibrary1P = [
+'CartmanSounds/Holy crap.mp3',
+'CartmanSounds/Im not fat.mp3',
+'CartmanSounds/Screw u guys.mp3'
 ];
+
+let audioLibrary2P = [
+  "CartmanSounds/Kenny laughing.mp3",
+  "CartmanSounds/Mrph mmph mrh mrph.mp3",
+  "CartmanSounds/Kenny blah.mp3",
+]
+
 
 
 // On crée un tableau "images", puis on ajoute deux fois chaque carte autant de fois qu'il y a de cartes 
@@ -121,20 +125,28 @@ function onCardClicked (i) {
     if (playerOne === true) {
       firstCardFront.style.backgroundColor = "#074a12";
       secondCardFront.style.backgroundColor = "#074a12";
-      // son joué en fonction du joueur gagnant
-      let audio2 = audioLibrary[randomNumber(audioLibrary.length)]
-      let audio = new Audio(`${audio2}`)
+      let audioTemp = audioLibrary1P[randomNumber(audioLibrary1P.length)]
+      let audio = new Audio(`${audioTemp}`)
       audio.play();
       firstPlayer();
+
       score1Elt.innerHTML = (`<p> Player One Score: ${score1}</p>`)
       modalScore();
+
+      score1Elt.innerHTML = (`<p> Player One Score: ${score1}) </p>`)
+
+
     } else {
       firstCardFront.style.backgroundColor = "#730000";
       secondCardFront.style.backgroundColor = "#730000";
+      let audioTemp = audioLibrary2P[randomNumber(audioLibrary2P.length)]
+      let audio = new Audio(`${audioTemp}`)
+      audio.play();
       secondPlayer();
       score2Elt.innerHTML = (`<p> Player Two Score: ${score2} </p>`) 
       modalScore();
     }
+
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
     imgToCompare = [];
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
