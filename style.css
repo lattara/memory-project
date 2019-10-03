@@ -216,7 +216,9 @@ fonts south park like
     text-align: center;
     background-image: url('images/sign.jpg');
     background-color: #6d5749;
+    border: solid;
     padding: 30px;
+    border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
     position: absolute;
 } 
@@ -310,3 +312,6 @@ fonts south park like
     cursor: pointer;
   }
 
+  a:hover {
+    transform: scale(1.03);
+  }
