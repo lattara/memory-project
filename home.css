@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'cibolaregular';
+  src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+       url('fonts/south-park/cibola-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'zed_saidregular';
+  src: url('fonts/zed_said/zed_said-webfont.woff2') format('woff2'),
+       url('fonts/zed_said/zed_said-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-position: bottom left;
+    overflow: hidden;
+  }
+
+  #home{
+    background-image: url(images/bg_home.jpg);
+    background-size: cover;
+    background-position: bottom left;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-animation: top-bottom 3s ease; /* Safari 4+ */
+    -moz-animation:    top-bottom 3s ease; /* Fx 5+ */
+    -o-animation:      top-bottom 3s ease; /* Opera 12+ */
+    animation:         top-bottom 3s ease; /* IE 10+, Fx 29+ */
+  }
+
+  @-webkit-keyframes top-bottom {
+    0%   { opacity: 1; }
+    50%   { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @-moz-keyframes top-bottom {
+    0%   { opacity: 1; }
+    50%   { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @-o-keyframes top-bottom {
+    0%   { opacity: 1; }
+    50%   { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes top-bottom {
+    0%   { opacity: 1; }
+    50%   { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  #option-div{
+    width: 500px;
+    margin: -50vh auto 0;
+    text-align: center;
+    background-image: url('images/sign.jpg');
+    border: solid;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+    position: relative;
+    -webkit-animation: pop-choices 4s ease; /* Safari 4+ */
+    -moz-animation:    pop-choices 4s ease; /* Fx 5+ */
+    -o-animation:      pop-choices 4s ease; /* Opera 12+ */
+    animation:         pop-choices 4s ease; /* IE 10+, Fx 29+ */
+  }
+
+  @-webkit-keyframes pop-choices {
+    0%   { margin: 0 auto 0; }
+    75%   { margin: 0 auto 0; }
+    85% { margin: -55vh auto 0; }
+    90% { margin: -50vh auto 0; }
+    95% { margin: -55vh auto 0; }
+    100% { margin: -50vh auto 0; }
+  }
+  @-moz-keyframes pop-choices {
+    0%   { margin: 0 auto 0; }
+    75%   { margin: 0 auto 0; }
+    85% { margin: -55vh auto 0; }
+    90% { margin: -50vh auto 0; }
+    95% { margin: -55vh auto 0; }
+    100% { margin: -50vh auto 0; }
+  }
+  @-o-keyframes pop-choices {
+    0%   { margin: 0 auto 0; }
+    75%   { margin: 0 auto 0; }
+    85% { margin: -55vh auto 0; }
+    90% { margin: -50vh auto 0; }
+    95% { margin: -55vh auto 0; }
+    100% { margin: -50vh auto 0; }
+  }
+  @keyframes pop-choices {
+    0%   { margin: 0 auto 0; }
+    75%   { margin: 0 auto 0; }
+    85% { margin: -55vh auto 0; }
+    90% { margin: -50vh auto 0; }
+    95% { margin: -55vh auto 0; }
+    100% { margin: -50vh auto 0; }
+  }
+
+  h1{
+    font-family: 'cibolaregular';
+    font-size: 48px;
+    margin-top: -5px;
+    text-transform: uppercase;
+  }
+
+  h2, h3{
+    font-family: 'zed_saidregular';
+  }
+
+  h2{
+    font-size: 34px;
+  }
+
+  h3{
+    font-size: 28.2px;
+    margin-top: -2px;
+  }
+
+  #choices{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    position: relative;
+  }
+
+  #choices .button-player{
+    position: relative;
+  }
+
+  #choices .button-player a{
+    font-family: 'zed_saidregular';
+    text-decoration: none;
+    color: white;
+    background-color:rgb(107, 71, 5);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  #choices .button-player a:hover{
+    box-shadow: 2px 2px 2px rgba(0,0,0,0);
+    background-color: maroon;
+  }
+
+  #choices img{
+    margin-top: 20px;
+  }
+
+  #choices .avatar-1, #choices .avatar-2, #choices .avatar-3{
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  #choices .avatar-1{
+    top: -78px;
+    left: 27px;
+  }
+
+  #choices .avatar-2{
+    top: -78px;
+    left: 3px;
+  }
+
+  #choices .avatar-3{
+    top: -74px;
+    left: 57px;
+  }
+
+  #choices .btn1:hover .avatar-1, #choices .btn2:hover .avatar-2, #choices .btn2:hover .avatar-3{
+    opacity: 1;
+  }
+
+
+
+
+
+
