@@ -1,0 +1,317 @@
+
+/* ---------------------
+fonts south park like
+---------------------- */
+
+@font-face {
+  font-family: 'zed_saidregular';
+  src: url('fonts/zed_said/zed_said-webfont.woff2') format('woff2'),
+       url('fonts/zed_said/zed_said-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cibolaregular';
+  src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+       url('fonts/south-park/cibola-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-position: bottom left;
+    overflow: hidden;
+  }
+  
+  #memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+
+  #memory-game img {
+    width: calc(22% - 10px);
+    height: calc(29.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(8, 6, 45);
+  }
+  
+  #memory-game img:active, #memory-game img:hover {
+    transform: scale(1.03);
+    transition: transform .0.5s;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0);
+  }
+  
+  .flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(0, 30, 53);
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+
+
+
+
+  /* ----- button ----- */
+
+  #game_state{
+    height: 100%;
+    background-color: rgb(170, 170, 170, 0.6);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  }
+
+  .play{
+    text-align: center;
+    background-color: rgb(107, 71, 5);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    margin: 0 15px;
+    float: left;
+  }
+
+  .play_button{
+    padding: 10px 20px;
+    color: black;
+    display: block;
+    text-decoration: none;
+    font-family: 'cibolaregular';
+  }
+
+  .play_button:active {
+    transform: scale(0.97);
+    transition: transform .0.5s;
+    box-shadow: 0;
+  }
+
+  .home_return{
+    position: absolute;
+    bottom: 15px;
+  }
+
+ /* ----- avatar styles ----- */
+  .imgClass{
+    cursor: pointer;
+  }
+  
+  #kennyfront{
+    
+    height: 200px;
+    width: 230px;
+    margin-bottom: 20px;
+    display:block;
+    
+  }
+  #kennyback{
+
+    height: 200px;
+    width: 230px;
+    margin-bottom: 20px;
+    display:none;
+    
+  }
+
+  /* ----- scoreBar style ----- */
+
+  .scoreBar{
+    text-align: center;
+    background-color:rgb(107, 71, 5);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    margin: 0 15px;
+    padding: 30px 50px;
+    color: black;
+    display: block;
+    text-decoration: none;
+    font-family: 'cibolaregular';
+    font-size: 2em;
+  }
+
+  .playersName{
+    font-size: 4em;
+    font-family: 'cibolaregular';
+    src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+         url('fonts/south-park/cibola-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    
+  }
+
+  .whitebutton{
+    text-align: center;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 0 300px #ccc;
+    margin: 0 15px;
+    padding: 30px 50px;
+    -webkit-text-fill-color: darkgoldenrod;
+    display: block;
+    text-decoration: none;
+    font-family: 'cibolaregular';
+    font-size: 2em;
+   
+  }
+
+  .playersNameClass{
+    color: #ccc;
+    font-size: 4em;
+    font-family: 'cibolaregular';
+    src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
+         url('fonts/south-park/cibola-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+  }
+
+  .replayButtonClass{
+    text-align: center;
+    background-color:white;
+    border-radius: 5px;
+    -webkit-text-fill-color: darkgoldenrod;
+    
+  }
+
+  #modal1{
+    width: 500px;
+    left: calc(50% - 125px);
+    text-align: center;
+    background-image: url('images/sign.jpg');
+    background-color: #6d5749;
+    border: solid;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+    position: absolute;
+} 
+
+@-webkit-keyframes pop-win {
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@-moz-keyframes pop-win {
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@-o-keyframes pop-win {
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@keyframes pop-win {
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+
+.modal-content p{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-family: 'zed_saidregular'
+}
+
+.modal-content h2{
+  font-family: 'cibolaregular'
+
+}
+
+.close a {
+  text-align: center;
+  background-color: rgb(112, 72, 18);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  margin: 0 15px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-family: 'cibolaregular';
+  text-decoration: none;
+
+}
+.close h2 {
+  font-family: 'cibolaregular'
+}
+
+.close a:visited {
+  color: inherit;
+  
+}
+
+.modal-content {
+  padding: 10px 30px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-decoration: none;
+
+}
+
+#kennywin {
+  margin-top: 30px;
+  width: 30%;
+  float: left;
+}
+
+#cartmanwin {
+  margin-top: 30px;
+  width: 30%;
+  float: right;
+}
+
+  .imgClass{
+    cursor: pointer;
+  }
+
+  a:hover {
+    transform: scale(1.03);
+  }
