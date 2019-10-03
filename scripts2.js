@@ -41,7 +41,7 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 
 
 // On crée une fonction pour random les cartes
-function shuffle(array) {
+/*function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -50,7 +50,7 @@ function shuffle(array) {
   }
 };
 shuffle(images);
-
+*/
 //initialisation des variables pour changement de joueurs
 let playerOne = true
 let playerTwo = false
@@ -72,6 +72,7 @@ let imgToCompare = [];
 // On initialise les tableaux qui stockent les targets links (get.elementById) des cartes comparées. Ils serviront pour le retournement des cartes si différentes
 let backElmntArray = [];
 let frontElmntArray = [];
+
 
 // On crée une constante pour sauvegarder la fonction onCardClicked => utlisée lors du else if => pour empecher de pouvoir retourner plus de deux cartes
 const resetonCardClicked = onCardClicked;
@@ -100,17 +101,12 @@ function onCardClicked (i) {
     
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
-    
+   
+   
+
     
     // son joué en fonction du joueur gagnant
-    if (playerOne === true){
-      let audio2 = audioLibrary[randomNumber(audioLibrary.length)]
-      let audio = new Audio(`${audio2}`)
-      audio.play();
-      console.log(audio)
-    } else {
-      
-    }
+  
 
 
 
@@ -118,9 +114,11 @@ function onCardClicked (i) {
     if (playerOne === true) {
       firstCardFront.style.backgroundColor = "#074a12";
       secondCardFront.style.backgroundColor = "#074a12";
+      killKenny ()
     } else {
       firstCardFront.style.backgroundColor = "#730000";
       secondCardFront.style.backgroundColor = "#730000";
+      showButt ()
     }
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
@@ -130,6 +128,7 @@ function onCardClicked (i) {
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
+    
 
     //Changement de joueur
     if (playerOne === true){
@@ -154,6 +153,7 @@ function onCardClicked (i) {
     backElmntArray = [];
     frontElmntArray = [];
     imgToCompare = [];
+    
   };
 };
 
@@ -163,3 +163,58 @@ function onCardClicked (i) {
 function displayCard() {
   location.reload();
 };
+
+
+//avatars setup > Kenny 1st player, Cartman 2nd player
+
+function showButt (){
+
+   avatarFront = document.getElementById('cartmanfront');
+   avatarBack = document.getElementById('cartmanback');
+   avatarFront.style.display='none';
+   avatarBack.style.display = 'block'; 
+   let cartmanNameChange = document.getElementById('cartmanName');
+   cartmanNameChange.classList.add ('changeCartmanNameClass')
+
+ setTimeout(function(){ 
+   avatarFront.style.display='block';
+   avatarBack.style.display = 'none';
+   cartmanNameChange.classList.remove('changeCartmanNameClass')  
+  }, 800);
+
+ }
+
+
+function killKenny(){
+   avatarFront = document.getElementById('kennyfront');
+   avatarBack = document.getElementById('kennyback');
+   avatarFront.style.display='none';
+   avatarBack.style.display = 'block'; 
+   let kennyNameChange = document.getElementById('kennyName');
+   kennyNameChange.classList.add ('changeKennyNameClass')
+  setTimeout(function(){ 
+     avatarFront.style.display='block';
+     avatarBack.style.display = 'none'; 
+     kennyNameChange.classList.remove ('changeKennyNameClass')
+    }, 800);
+     
+  }
+ 
+
+  /*
+
+
+  function killKenny(){
+  avatarFront = document.getElementById('kennyfront');
+  avatarBack = document.getElementById('kennyback');
+  avatarFront.style.display= 'none';
+  avatarBack.style.display = 'block'; 
+  let scoreButton = document.getElementById('scoreFrame');
+  let nameToWhite = document.getElementById('playersName')
+  let replayToWhite = document.getElementById('replayButton')
+  scoreButton.classList.add('whitebutton');
+  nameToWhite.classList.add('playersNameClass')
+  replayToWhite.classList.add('replayButtonClass')
+
+
+  */

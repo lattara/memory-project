@@ -1,5 +1,5 @@
 // On stocke nos images dans des tablaux.
-const back = 'images/backface.jpg';
+const back = 'images/verso2.jpg';
 const imagesSingle = [
   'images/Kenny.png',
   'images/Cartman.png',
@@ -23,6 +23,7 @@ let score = 0;
 function addScore() {
   return score +=1;
 }
+
 let scoreElt = document.getElementById('score');
 
 let count = 0;
@@ -31,7 +32,7 @@ function tryCount() {
 }
 let countElt = document.getElementById('count');
 // On crée une fonction pour random les cartes
-function shuffle(array) {
+/*function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -40,7 +41,7 @@ function shuffle(array) {
   }
 };
 shuffle(images);
-
+*/
 // On stocke dans imagesElmnt le lien de ciblage de la zone d'insertion des balises images
 let imagesElt = document.getElementById('memory-game');
 
@@ -97,13 +98,13 @@ function onCardClicked (i) {
     imgToCompare = [];
     // Appel la fonction du calcul du score et affiche le score dans le HTML
     addScore();
-    scoreElt.innerHTML = (`<p> Score player : ${score} </p>`)
+    scoreElt.innerHTML = `${score}`;
     tryCount();
-    countElt.innerHTML =(`<p> Try : ${count} </p>` )
+    //countElt.innerHTML =(`<p> Try : ${count} </p>` )
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
     frontElmntArray = [];
-
+    killKenny()
    
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
@@ -125,7 +126,7 @@ function onCardClicked (i) {
     frontElmntArray = [];
     imgToCompare = [];
     tryCount();
-    countElt.innerHTML = (`<p> Number of tries : ${count} </p>`)
+    //countElt.innerHTML = (`<p> Number of tries : ${count} </p>`)
   };
 };
 
@@ -136,40 +137,39 @@ function displayCard() {
 };
 
 
-//score Bar avatar setup
-
-function showButt (){
-
-    avatarFront = document.getElementById('cartmanfront');
-    avatarBack = document.getElementById('cartmanback');
-    avatarFront.style.display='none';
-    avatarBack.style.display = 'block'; 
-
-  setTimeout(function(){ 
-    avatarFront.style.display='block';
-    avatarBack.style.display = 'none';  }, 800);
-
-}
+//avatars setup > ONLY Kenny as player
 
 
 function killKenny(){
   avatarFront = document.getElementById('kennyfront');
   avatarBack = document.getElementById('kennyback');
-  avatarFront.style.display='none';
+  avatarFront.style.display= 'none';
   avatarBack.style.display = 'block'; 
+  let scoreButton = document.getElementById('scoreFrame');
+  let nameToWhite = document.getElementById('playersName')
+  let replayToWhite = document.getElementById('replayButton')
+  scoreButton.classList.add('whitebutton');
+  nameToWhite.classList.add('playersNameClass')
+  replayToWhite.classList.add('replayButtonClass')
 
+  
   setTimeout(function(){ 
     avatarFront.style.display='block';
-    avatarBack.style.display = 'none';  }, 800);
+    avatarBack.style.display = 'none'; 
+    let scoreButton = document.getElementById('scoreFrame');
+    let nameToWhite = document.getElementById('playersName')
+    let replayToWhite = document.getElementById('replayButton')
+    scoreButton.classList.remove('whitebutton');
+    nameToWhite.classList.remove('playersNameClass')
+    replayToWhite.classList.remove('replayButtonClass')
+  }, 800);
+
+  
  }
 
 
-
-
-
-
-
-   
+ 
 function randomNumber(number) {  
   return Math.floor(Math.random() * number);
 }
+
