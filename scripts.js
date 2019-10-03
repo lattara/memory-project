@@ -21,7 +21,7 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 //Enfin pointage de la div score.
 let score = 0;
 let popModal = document.getElementById('modal1');
-popModal.style = "bottom: -35vh"
+popModal.style = "bottom: -50vh";
 function addScore() {
   score +=1;
   if (score === 6) {

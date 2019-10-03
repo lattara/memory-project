@@ -45,8 +45,8 @@ fonts south park like
   }
 
   #memory-game img {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
+    width: calc(22% - 10px);
+    height: calc(29.333% - 10px);
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -204,8 +204,6 @@ fonts south park like
     
   }
 
-
-
   #modal1{
     width: 500px;
     left: calc(50% - 125px);
@@ -218,32 +216,32 @@ fonts south park like
 } 
 
 @-webkit-keyframes pop-win {
-  0%   { bottom: -200px; }
-  50%   { bottom: -200px; }
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
   70% { bottom: 40vh; }
   80% { bottom: 35vh; }
   90% { bottom: 40vh; }
   100% { bottom: 35vh; }
 }
 @-moz-keyframes pop-win {
-  0%   { bottom: -200px; }
-  50%   { bottom: -200px; }
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
   70% { bottom: 40vh; }
   80% { bottom: 35vh; }
   90% { bottom: 40vh; }
   100% { bottom: 35vh; }
 }
 @-o-keyframes pop-win {
-  0%   { bottom: -200px; }
-  50%   { bottom: -200px; }
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
   70% { bottom: 40vh; }
   80% { bottom: 35vh; }
   90% { bottom: 40vh; }
   100% { bottom: 35vh; }
 }
 @keyframes pop-win {
-  0%   { bottom: -200px; }
-  50%   { bottom: -200px; }
+  0%   { bottom: -50vh; }
+  50%   { bottom: -50vh; }
   70% { bottom: 40vh; }
   80% { bottom: 35vh; }
   90% { bottom: 40vh; }
