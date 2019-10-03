@@ -1,3 +1,4 @@
+
 /* ---------------------
 fonts south park like
 ---------------------- */
@@ -31,6 +32,7 @@ fonts south park like
     background-image: url(images/bg.jpg);
     background-size: cover;
     background-position: bottom left;
+    overflow: hidden;
   }
   
   #memory-game {
@@ -81,16 +83,18 @@ fonts south park like
     transform: rotateY(180deg);
   }
 
+
+
+
+
   /* ----- button ----- */
 
   #game_state{
     height: 100%;
-    background-color: rgb(170, 170, 170, 0.2);
+    background-color: rgb(170, 170, 170, 0.6);
     width: 250px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
+    justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
   }
@@ -117,8 +121,7 @@ fonts south park like
     box-shadow: 0;
   }
 
-
-  /* ----- avatar styles ----- */
+ /* ----- avatar styles ----- */
   .imgClass{
     cursor: pointer;
   }
@@ -201,6 +204,105 @@ fonts south park like
     
   }
 
- 
 
+
+  #modal1{
+    width: 500px;
+    left: calc(50% - 125px);
+    text-align: center;
+    background-image: url('images/sign.jpg');
+    background-color: #6d5749;
+    padding: 30px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+    position: absolute;
+} 
+
+@-webkit-keyframes pop-win {
+  0%   { bottom: -200px; }
+  50%   { bottom: -200px; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@-moz-keyframes pop-win {
+  0%   { bottom: -200px; }
+  50%   { bottom: -200px; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@-o-keyframes pop-win {
+  0%   { bottom: -200px; }
+  50%   { bottom: -200px; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+@keyframes pop-win {
+  0%   { bottom: -200px; }
+  50%   { bottom: -200px; }
+  70% { bottom: 40vh; }
+  80% { bottom: 35vh; }
+  90% { bottom: 40vh; }
+  100% { bottom: 35vh; }
+}
+
+.modal-content p{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-family: 'zed_saidregular'
+}
+
+.modal-content h2{
+  font-family: 'cibolaregular'
+
+}
+
+.close a {
+  text-align: center;
+  background-color: rgb(112, 72, 18);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  margin: 0 15px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-family: 'cibolaregular';
+  text-decoration: none;
+
+}
+.close h2 {
+  font-family: 'cibolaregular'
+}
+
+.close a:visited {
+  color: inherit;
   
+}
+
+.modal-content {
+  padding: 10px 30px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-decoration: none;
+
+}
+
+#kennywin {
+  margin-top: 30px;
+  width: 30%;
+  float: left;
+}
+
+#cartmanwin {
+  margin-top: 30px;
+  width: 30%;
+  float: right;
+}
+
+  .imgClass{
+    cursor: pointer;
+  }
+

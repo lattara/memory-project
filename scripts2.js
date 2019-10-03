@@ -1,3 +1,4 @@
+
 // Création de constante pour pouvoir générer un nombre variable de cartes en fonction du niveau choisi.
 // Cette fonctionnalité est temporairement mise de coté le temps de finir de coder les élements essentiels.
 const easyMode = 4;
@@ -21,14 +22,18 @@ const imagesSingle = [
 ];
 
 // bibliotèque de son
-let audioLibrary = [
-  'CartmanSounds/Cartman1.mp3',
-  'CartmanSounds/Cartman2.mp3',
-  'CartmanSounds/Cartman3.mp3',
-  'CartmanSounds/Cartman4.mp3',
-  'CartmanSounds/Cartman5.mp3',
-  'CartmanSounds/Cartman6.mp3',
+let audioLibrary1P = [
+'CartmanSounds/Holy crap.mp3',
+'CartmanSounds/Im not fat.mp3',
+'CartmanSounds/Screw u guys.mp3'
 ];
+
+let audioLibrary2P = [
+  "CartmanSounds/Kenny laughing.mp3",
+  "CartmanSounds/Mrph mmph mrh mrph.mp3",
+  "CartmanSounds/Kenny blah.mp3",
+]
+
 
 
 // On crée un tableau "images", puis on ajoute deux fois chaque carte autant de fois qu'il y a de cartes 
@@ -39,9 +44,26 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
   images.push(imagesSingle[j]);
 };
 
+let score1 = 0;
+let score2 = 0;
+let popModal = document.getElementById('modal1');
+let popModal2 = document.getElementById('modal2');
+popModal.style = "bottom: -35vh"
+popModal2.style = "bottom: -35vh"
 
-// On crée une fonction pour random les cartes
-/*function shuffle(array) {
+function firstPlayer() {
+  score1 += 1;
+}
+
+let score1Elt = document.getElementById('score1');
+
+function secondPlayer() {
+  score2 += 1;
+}
+
+let score2Elt = document.getElementById('score2');
+  // On crée une fonction pour random les cartes
+function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -49,8 +71,8 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
     array[j] = temp;
   }
 };
-shuffle(images);
-*/
+// shuffle(images);
+
 //initialisation des variables pour changement de joueurs
 let playerOne = true
 let playerTwo = false
@@ -72,7 +94,6 @@ let imgToCompare = [];
 // On initialise les tableaux qui stockent les targets links (get.elementById) des cartes comparées. Ils serviront pour le retournement des cartes si différentes
 let backElmntArray = [];
 let frontElmntArray = [];
-
 
 // On crée une constante pour sauvegarder la fonction onCardClicked => utlisée lors du else if => pour empecher de pouvoir retourner plus de deux cartes
 const resetonCardClicked = onCardClicked;
@@ -100,25 +121,32 @@ function onCardClicked (i) {
   imgToCompare.push(images[i]);
     
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
-  if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
-   
-   
-
-    
-    // son joué en fonction du joueur gagnant
-  
-
-
-
+  if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) { 
 // changement de couleur des cartes gagantes en fonction du joueur actif
     if (playerOne === true) {
       firstCardFront.style.backgroundColor = "#074a12";
       secondCardFront.style.backgroundColor = "#074a12";
-      killKenny ()
+      let audioTemp = audioLibrary1P[randomNumber(audioLibrary1P.length)]
+      let audio = new Audio(`${audioTemp}`)
+      audio.play();
+      firstPlayer();
+
+      score1Elt.innerHTML = (`<p> Player One Score: ${score1}</p>`)
+      modalScore();
+
+      score1Elt.innerHTML = (`<p> Player One Score: ${score1}) </p>`)
+      killKenny();
+
     } else {
       firstCardFront.style.backgroundColor = "#730000";
       secondCardFront.style.backgroundColor = "#730000";
-      showButt ()
+      let audioTemp = audioLibrary2P[randomNumber(audioLibrary2P.length)]
+      let audio = new Audio(`${audioTemp}`)
+      audio.play();
+      secondPlayer();
+      score2Elt.innerHTML = (`<p> Player Two Score: ${score2} </p>`) 
+      modalScore();
+      showButt();
     }
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
@@ -128,18 +156,15 @@ function onCardClicked (i) {
     frontElmntArray = [];
   // Alors que si le nombre d'image comparée est égale à 2 mais que les images sont différentes
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
-    
-
     //Changement de joueur
-    if (playerOne === true){
+    if (playerOne === true) {
       playerOne = false
       playerTwo = true
-    } 
+    }
     else {
       playerOne = true
       playerTwo = false
     }
-
     // on les retourne
     onCardClicked = false;
     setTimeout(function(){
@@ -153,19 +178,38 @@ function onCardClicked (i) {
     backElmntArray = [];
     frontElmntArray = [];
     imgToCompare = [];
-    
   };
 };
-
-
-
 // Fonction permettant de reset les cartes retounées
 function displayCard() {
   location.reload();
 };
+function randomNumber(number) {
+  return Math.floor(Math.random() * number);
+}
 
+function closeClick() {
+  popModal.style.display = 'none';
+}
 
-//avatars setup > Kenny 1st player, Cartman 2nd player
+function closeClick2() {
+  popModal2.style.display = 'none';
+}
+
+function modalScore() {
+    let varcontrol = score2 + score1
+    console.log(varcontrol);
+  if (score2 + score1 >= 9) {
+    if (score1 > score2) { 
+      popModal.style = "bottom: 35vh; -webkit-animation: pop-win 2s ease; -moz-animation: pop-win 2s ease; -o-animation: pop-win 2s ease; animation: pop-win 2s ease;";
+    }
+    else {
+      popModal2.style = "bottom: 35vh; -webkit-animation: pop-win 2s ease; -moz-animation: pop-win 2s ease; -o-animation: pop-win 2s ease; animation: pop-win 2s ease;";
+    }
+    }
+  }
+  
+  //avatars setup > Kenny 1st player, Cartman 2nd player
 
 function showButt (){
 
@@ -201,20 +245,4 @@ function killKenny(){
   }
  
 
-  /*
 
-
-  function killKenny(){
-  avatarFront = document.getElementById('kennyfront');
-  avatarBack = document.getElementById('kennyback');
-  avatarFront.style.display= 'none';
-  avatarBack.style.display = 'block'; 
-  let scoreButton = document.getElementById('scoreFrame');
-  let nameToWhite = document.getElementById('playersName')
-  let replayToWhite = document.getElementById('replayButton')
-  scoreButton.classList.add('whitebutton');
-  nameToWhite.classList.add('playersNameClass')
-  replayToWhite.classList.add('replayButtonClass')
-
-
-  */

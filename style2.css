@@ -31,11 +31,12 @@ fonts south park like
       background-size: cover;
       background-position: bottom left;
       display: flex;
+      overflow: hidden;
     }
     
     #memory-game {
-      width: 80%;
-      height: 640px;  
+      width: 70%;
+      height: 620px;  
       margin: auto;
       display: flex;
       flex-wrap: wrap;
@@ -45,7 +46,7 @@ fonts south park like
   
     #memory-game img {
       width: calc(16% - 10px);
-      height: calc(33.33% - 10px);
+      height: calc(30.33% - 10px);
       margin: 5px;
       position: relative;
       transform: scale(1);
@@ -168,7 +169,7 @@ fonts south park like
       background-color: #6d5749;
       padding: 30px;
       box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
-      position: relative;
+      position: absolute;
       -webkit-animation: pop-choices 4s ease; /* Safari 4+ */
       -moz-animation:    pop-choices 4s ease; /* Fx 5+ */
       -o-animation:      pop-choices 4s ease; /* Opera 12+ */
@@ -331,6 +332,7 @@ fonts south park like
 
 
     #modal1{
+
         width: 500px;
         margin: -50vh auto 0;
         text-align: center;
@@ -425,3 +427,116 @@ fonts south park like
       color:maroon;
 
     }
+
+      width: 500px;
+      left: calc(50% - 125px);
+      text-align: center;
+      background-image: url('images/sign.jpg');
+      background-color: #6d5749;
+      border: solid;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+      position: absolute;
+    }
+
+    #modal2{
+      width: 500px;
+      left: calc(50% - 125px);
+      text-align: center;
+      background-image: url('images/sign.jpg');
+      background-color: #6d5749;
+      border: solid;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+      position: absolute;
+    }
+
+    @-webkit-keyframes pop-win {
+      0%   { bottom: -200px; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
+      100% { bottom: 35vh; }
+    }
+    @-moz-keyframes pop-win {
+      0%   { bottom: -200px; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
+      100% { bottom: 35vh; }
+    }
+    @-o-keyframes pop-win {
+      0%   { bottom: -200px; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
+      100% { bottom: 35vh; }
+    }
+    @keyframes pop-win {
+      0%   { bottom: -200px; }
+      50%   { bottom: -200px; }
+      70% { bottom: 40vh; }
+      80% { bottom: 35vh; }
+      90% { bottom: 40vh; }
+      100% { bottom: 35vh; }
+    }
+
+    #kennywin {
+      width: 30%;
+      float: left;
+    }
+
+    .modal-content p{
+      margin-bottom: 20px;
+      margin-top: 10px;
+      font-family: 'zed_saidregular'
+    }
+
+    .modal-content h2{
+      font-family: 'cibolaregular'
+
+    }
+
+    .close a {
+      text-align: center;
+      background-color: rgb(112, 72, 18);
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+      margin: 0 15px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-family: 'cibolaregular';
+      text-decoration: none;
+
+    }
+    .close h2 {
+      font-family: 'cibolaregular'
+    }
+
+    .close a:visited {
+      color: inherit;
+      
+    }
+
+
+    .modal-content {
+      padding: 10px 30px;
+      color: rgb(0, 0, 0);
+      display: block;
+      text-decoration: none;
+
+    }
+
+    #cartmanwin {
+      width: 30%;
+      float: left;
+    }
+
+    
+
+

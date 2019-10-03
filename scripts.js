@@ -20,16 +20,24 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 // Initialise la varaiable du score puis fonction a appelé pour le calcul du score. 
 //Enfin pointage de la div score.
 let score = 0;
+let popModal = document.getElementById('modal1');
+popModal.style = "bottom: -35vh"
 function addScore() {
-  return score +=1;
+  score +=1;
+  if (score === 6) {
+    popModal.style = "bottom: 35vh; -webkit-animation: pop-win 2s ease; -moz-animation: pop-win 2s ease; -o-animation: pop-win 2s ease; animation: pop-win 2s ease;";
+  }
 }
 
 let scoreElt = document.getElementById('score');
 
 let count = 0;
 function tryCount() {
-  return count += 1  ;
+  count += 1;
+  document.getElementById('turn').innerHTML =`<p>You did it in ${count} turns !</p>`;
 }
+
+
 let countElt = document.getElementById('count');
 // On crée une fonction pour random les cartes
 /*function shuffle(array) {
@@ -98,7 +106,9 @@ function onCardClicked (i) {
     imgToCompare = [];
     // Appel la fonction du calcul du score et affiche le score dans le HTML
     addScore();
+
     scoreElt.innerHTML = `${score}`;
+
     tryCount();
     //countElt.innerHTML =(`<p> Try : ${count} </p>` )
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
@@ -171,5 +181,13 @@ function killKenny(){
  
 function randomNumber(number) {  
   return Math.floor(Math.random() * number);
+}
+
+
+let closeModal = document.getElementsByClassName('close_button');
+    
+
+function closeClick() {
+  popModal.style.display = 'none';
 }
 
