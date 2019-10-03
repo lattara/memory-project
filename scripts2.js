@@ -48,8 +48,8 @@ let score1 = 0;
 let score2 = 0;
 let popModal = document.getElementById('modal1');
 let popModal2 = document.getElementById('modal2');
-popModal.style = "bottom: -35vh"
-popModal2.style = "bottom: -35vh"
+popModal.style = "bottom: -50vh"
+popModal2.style = "bottom: -50vh"
 
 function firstPlayer() {
   score1 += 1;
