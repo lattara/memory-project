@@ -45,18 +45,24 @@ for (let j = 0 ; j < imagesSingle.length ; j++) {
 
 let score1 = 0;
 let score2 = 0;
+let popModal = document.getElementById('modal1');
+let popModal2 = document.getElementById('modal2');
+popModal.style = "bottom: -35vh"
+popModal2.style = "bottom: -35vh"
 
 function firstPlayer() {
-  return score1 += 1;
+  score1 += 1;
 }
+
 let score1Elt = document.getElementById('score1');
 
 function secondPlayer() {
-  return score2 += 1;
+  score2 += 1;
 }
+
 let score2Elt = document.getElementById('score2');
-// On crée une fonction pour random les cartes
-/*function shuffle(array) {
+  // On crée une fonction pour random les cartes
+function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -64,7 +70,7 @@ let score2Elt = document.getElementById('score2');
     array[j] = temp;
   }
 };
-shuffle(images);*/  
+// shuffle(images);
 
 //initialisation des variables pour changement de joueurs
 let playerOne = true
@@ -123,7 +129,12 @@ function onCardClicked (i) {
       let audio = new Audio(`${audioTemp}`)
       audio.play();
       firstPlayer();
+
+      score1Elt.innerHTML = (`<p> Player One Score: ${score1}</p>`)
+      modalScore();
+
       score1Elt.innerHTML = (`<p> Player One Score: ${score1}) </p>`)
+
 
     } else {
       firstCardFront.style.backgroundColor = "#730000";
@@ -133,6 +144,7 @@ function onCardClicked (i) {
       audio.play();
       secondPlayer();
       score2Elt.innerHTML = (`<p> Player Two Score: ${score2} </p>`) 
+      modalScore();
     }
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison
@@ -173,3 +185,24 @@ function displayCard() {
 function randomNumber(number) {
   return Math.floor(Math.random() * number);
 }
+
+function closeClick() {
+  popModal.style.display = 'none';
+}
+
+function closeClick2() {
+  popModal2.style.display = 'none';
+}
+
+function modalScore() {
+    let varcontrol = score2 + score1
+    console.log(varcontrol);
+  if (score2 + score1 >= 9) {
+    if (score1 > score2) { 
+      popModal.style = "bottom: 35vh; -webkit-animation: pop-win 2s ease; -moz-animation: pop-win 2s ease; -o-animation: pop-win 2s ease; animation: pop-win 2s ease;";
+    }
+    else {
+      popModal2.style = "bottom: 35vh; -webkit-animation: pop-win 2s ease; -moz-animation: pop-win 2s ease; -o-animation: pop-win 2s ease; animation: pop-win 2s ease;";
+    }
+    }
+  }
