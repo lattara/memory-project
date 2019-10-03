@@ -95,20 +95,20 @@ fonts south park like
     width: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
   }
 
-  .play, .reset{
+  .play{
     text-align: center;
     background-color:#4A79A5;
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     margin: 0 15px;
+    float: left;
   }
 
-  .play_button, .reset_button{
+  .play_button{
     padding: 10px 20px;
     color: black;
     display: block;
@@ -116,10 +116,15 @@ fonts south park like
     font-family: 'cibolaregular';
   }
 
-  .play_button:active, .reset_button:active {
+  .play_button:active {
     transform: scale(0.97);
     transition: transform .0.5s;
     box-shadow: 0;
+  }
+
+  .home_return{
+    position: absolute;
+    bottom: 15px;
   }
 
  /* ----- avatar styles ----- */
@@ -212,7 +217,9 @@ fonts south park like
     text-align: center;
     background-image: url('images/sign.jpg');
     background-color: #6d5749;
+    border: solid;
     padding: 30px;
+    border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
     position: absolute;
 } 
@@ -306,3 +313,6 @@ fonts south park like
     cursor: pointer;
   }
 
+  a:hover {
+    transform: scale(1.03);
+  }

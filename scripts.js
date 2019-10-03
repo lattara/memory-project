@@ -10,6 +10,18 @@ const imagesSingle = [
 ];
 
 
+let audioLibrary = [
+  'CartmanSounds/Holy crap.mp3',
+  'CartmanSounds/Im not fat.mp3',
+  'CartmanSounds/Screw u guys.mp3',
+    "CartmanSounds/Kenny laughing.mp3",
+    "CartmanSounds/Mrph mmph mrh mrph.mp3",
+    "CartmanSounds/Kenny blah.mp3",
+  ]
+
+
+
+
 // On crée un tableau "images", puis on ajoute deux fois chaque carte autant de fois qu'il y a de cartes 
 // dans le tableau "imagesSingle".
 let images = [];
@@ -99,7 +111,10 @@ function onCardClicked (i) {
   // Si la taille du tableau est égale à 2 ET que l'url de la première image cliquée est égale à celle de la deuxième
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) {
 
-    killKenny();
+  killKenny();
+  let audioTemp = audioLibrary[randomNumber(audioLibrary.length)]
+  let audio = new Audio(`${audioTemp}`)
+  audio.play();
     
 
     // alors on réinitialise le tableau de comparaison pour pouvoir réutiliser la fonction de comparaison

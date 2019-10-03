@@ -22,13 +22,13 @@ const imagesSingle = [
 ];
 
 // bibliotèque de son
-let audioLibrary1P = [
+let audioLibrary2P = [
 'CartmanSounds/Holy crap.mp3',
 'CartmanSounds/Im not fat.mp3',
 'CartmanSounds/Screw u guys.mp3'
 ];
 
-let audioLibrary2P = [
+let audioLibrary1P = [
   "CartmanSounds/Kenny laughing.mp3",
   "CartmanSounds/Mrph mmph mrh mrph.mp3",
   "CartmanSounds/Kenny blah.mp3",
@@ -62,7 +62,10 @@ function secondPlayer() {
 }
 
 let score2Elt = document.getElementById('score2');
-  // On crée une fonction pour random les cartes
+
+
+
+// On crée une fonction pour random les cartes
 function shuffle(array) {
   for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * i);
@@ -71,7 +74,8 @@ function shuffle(array) {
     array[j] = temp;
   }
 };
-// shuffle(images);
+shuffle(images);
+
 
 //initialisation des variables pour changement de joueurs
 let playerOne = true
@@ -83,8 +87,8 @@ let imagesElt = document.getElementById('memory-game');
 
 // On génére les Ids des cartes
 for(let i = 0; i < images.length; i++) {
-    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}')" src="${back}" style="display: block" id="back-${[i]}" />`;
-    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" />`;
+    imagesElt.innerHTML += `<img onclick="onCardClicked('${[i]}')" src="${back}" style="display: block" id="back-${[i]}" class="imgClass"/>`;
+    imagesElt.innerHTML += `<img src="${images[i]}" style="display: none" id="card-${[i]}" class="imgClass" />`;
 };
 
 
@@ -131,10 +135,10 @@ function onCardClicked (i) {
       audio.play();
       firstPlayer();
 
-      score1Elt.innerHTML = `${score1}`
+      score1Elt.innerHTML = (`<p> ${score1}</p>`)
       modalScore();
 
-      score1Elt.innerHTML = `${score1}`
+      score1Elt.innerHTML = (`<p> ${score1}</p>`)
       killKenny();
 
     } else {
@@ -144,7 +148,7 @@ function onCardClicked (i) {
       let audio = new Audio(`${audioTemp}`)
       audio.play();
       secondPlayer();
-      score2Elt.innerHTML = `${score2}`
+      score2Elt.innerHTML = (`<p> ${score2}</p>`) 
       modalScore();
       showButt();
     }
@@ -158,12 +162,16 @@ function onCardClicked (i) {
   } else if ((imgToCompare.length === 2) && (imgToCompare[0] !== imgToCompare[1])){
     //Changement de joueur
     if (playerOne === true) {
-      playerOne = false
-      playerTwo = true
+      imagesElt.style.cursor = "url(images/CartmanPointer.png), auto";
+      playerOne = false;
+      playerTwo = true;
+      
     }
     else {
-      playerOne = true
-      playerTwo = false
+      imagesElt.style.cursor = "url(images/KennyPointer.png), auto";
+      playerOne = true;
+      playerTwo = false;
+      
     }
     // on les retourne
     onCardClicked = false;
