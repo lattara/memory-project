@@ -11,6 +11,27 @@
 
     <section id="game_state">
           <a href="index2Fr.html" onclick=""> Fr </a>
+        <div id="score"></div>
+        <div id ="kennyName" class="kennyNameClass">KENNY</div>
+        <div id ="avatarContainer1">
+            <img src="images/KennyMcCormick.png" id ="kennyfront">
+            <img src="images/kennyAngel.png" id ="kennyback" >    
+        </div>
+
+        <div id = "cartmanName" class="cartmanNameClass">CARTMAN</div>
+       
+        <div id ="avatarContainer2">
+            <img src="images/2.png" id ="cartmanfront">
+            <img src="images/3.png" id ="cartmanback" >    
+        </div>
+
+        <div class="scoreBar" id="scoreFrame">
+            Score : <span id="score">0</span>
+          </div>
+      
+          <div id="count"></div>
+        
+        
       <div class="play">
         <a href="#" class="play_button" onclick="displayCard()">REPLAY</a>
       </div>
@@ -24,7 +45,7 @@
     </section>
 
 
-    <!-- <section id='modal1'>
+    <section id='modal1'>
         
         <img id="kennywin" src="images/Kennywin.png" alt="Kenny" />
 
@@ -32,20 +53,22 @@
             <h2>Player 1</h2>
             <p>Winner<br />Hm hmm hmm hm hmmm hm hmm !!</p>
             <div class="close">
-                <a href="#" class="close_button">Close</a>
-            </div>
-        </div> -->
+              <a href="#" onclick="closeClick()" class="close_button">Close</a>
+          </div>
+        </div>
+    </section>
 
-        <!-- <img id="cartmanwin" src="images/Cartmanwin.png" alt="Kenny" />
+    <section id='modal2'>
+        <img id="cartmanwin" src="images/Cartmanwin.png" alt="Cartman" />
 
         <div class="modal-content">
             <h2>Player 2</h2>
             <p>WINNER<br />
               Whooouuu ca trou l’cul !</p>
-            <div class="close">
-                <a href="#" class="close_button">Close</a>
+              <div class="close">
+                <a href="#" onclick="closeClick2()" class="close_button">Close</a>
             </div>
-        </div> -->
+        </div>
 
     </section>
 

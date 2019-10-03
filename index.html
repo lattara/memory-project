@@ -13,6 +13,17 @@
 
     <section id="game_state">
       <a href="indexFr.html" onclick=""> Fr </a>
+      <div id="playersName" class="playersName">KENNY</div>
+    <div id="avatarContainer1">
+      <img src="images/KennyMcCormick.png" id="kennyfront">
+      <img src="images/kennyAngel.png" id="kennyback">
+    </div>
+    <div class="scoreBar" id="scoreFrame">
+        Score : <span id="score">0</span>
+      </div>
+  
+      <div id="count"></div>
+      
       <div class="play">
         <a href="#" class="play_button" onclick="displayCard()">REPLAY</a>
       </div>
@@ -24,20 +35,21 @@
     </section>
 
 
-    <!-- <section id='modal1'>
+    <section id='modal1'>
         <img id="kennywin" src="images/Kennywin.png" alt="Kenny" />
         <img id="cartmanwin" src="images/Cartmanwin.png" alt="Kenny" />
         <div class="modal-content">
-            <h2>Win in 6 count</h2>
+            <h2 id="turn"></h2>
             <p>Hm hmm hmm hm hmmm hm hmm !!</p>
             <div class="close">
-                <a href="#" class="close_button">Close</a>
+                <a href="#" onclick="closeClick()" class="close_button">Close</a>
             </div>
         </div>
-      </section> -->
+      </section>
 
   <script src="function.js"></script>
   <script src="scripts.js"></script>
 </body>
+
 
 </html>
