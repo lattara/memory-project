@@ -95,20 +95,20 @@ fonts south park like
       width: 250px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     }
   
-    .play, .reset{
+    .play{
       text-align: center;
       background-color: rgb(107, 71, 5);
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
       margin: 0 15px;
+      float: left;
     }
   
-    .play_button, .reset_button{
+    .play_button{
       padding: 10px 20px;
       color: black;
       display: block;
@@ -116,10 +116,15 @@ fonts south park like
       font-family: 'cibolaregular';
     }
   
-    .play_button:active, .reset_button:active {
+    .play_button:active {
       transform: scale(0.97);
       transition: transform .0.5s;
       box-shadow: 0;
+    }
+  
+    .home_return{
+      position: absolute;
+      bottom: 15px;
     }
 
 
@@ -296,37 +301,6 @@ fonts south park like
       opacity: 1;
     }
   ​
-    #game_state{
-      height: 100%;
-      background-color: gray;
-      width: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  ​
-    .play, .reset{
-      text-align: center;
-      background-color: #060AB2;
-      border-radius: 5px;
-      box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-      margin: 0 15px;
-    }
-  ​
-    .play_button, .reset_button{
-      padding: 10px 30px;
-      color: white;
-      display: block;
-      text-decoration: none;
-    }
-  ​
-    .play_button:active, .reset_button:active {
-      transform: scale(0.97);
-      transition: transform .0.5s;
-      box-shadow: 0;
-    }
-
-
 
     /* modal  */
 
@@ -337,7 +311,9 @@ fonts south park like
         margin: -50vh auto 0;
         text-align: center;
         background-color: #6d5749;
+        border: solid;
         padding: 30px;
+        border-radius: 5px;
         box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
         position: absolute;
         -webkit-animation: pop-choices 4s ease; /* Safari 4+ */
@@ -347,39 +323,40 @@ fonts south park like
     }
 
     /* avatar Styles  */
+
+    #kennyName{
+      margin-top: 20px;
+    }
     
     #kennyfront{
-      
       height: 150px;
       width: 200px;
       margin-bottom: 20px;
       display:block;
-      
     }
     #kennyback{
-  
       height: 150px;
       width: 200px;
       margin-bottom: 20px;
       display:none;
-      
+    }
+
+    #cartmanName{
+      margin-top: 20px;
     }
 
     #cartmanfront{
-      
       height: 150px;
       width: 160px;
       margin-bottom: 20px;
       display:block;
-      
     }
+
     #cartmanback{
-  
       height: 150px;
       width: 160px;
       margin-bottom: 20px;
       display:none;
-      
     }
 
     .kennyNameClass, .cartmanNameClass {
@@ -397,13 +374,17 @@ fonts south park like
       background-color:rgb(107, 71, 5);
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-      padding: 30px 50px;
+      padding: 20px 30px;
       color: black;
       display: block;
       text-decoration: none;
       font-family: 'cibolaregular';
       font-size: 2em;
       margin-bottom: 20px;
+    }
+
+    #score1, #score2{
+      float: right;
     }
 
     .changeKennyNameClass{
@@ -427,7 +408,7 @@ fonts south park like
       color:maroon;
 
     }
-
+      #modal1 {
       width: 500px;
       left: calc(50% - 125px);
       text-align: center;
@@ -454,32 +435,32 @@ fonts south park like
     }
 
     @-webkit-keyframes pop-win {
-      0%   { bottom: -200px; }
-      50%   { bottom: -200px; }
+      0%   { bottom: -50vh; }
+      50%   { bottom: -50vh; }
       70% { bottom: 40vh; }
       80% { bottom: 35vh; }
       90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
     @-moz-keyframes pop-win {
-      0%   { bottom: -200px; }
-      50%   { bottom: -200px; }
+      0%   { bottom: -50vh; }
+      50%   { bottom: -50vh; }
       70% { bottom: 40vh; }
       80% { bottom: 35vh; }
       90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
     @-o-keyframes pop-win {
-      0%   { bottom: -200px; }
-      50%   { bottom: -200px; }
+      0%   { bottom: -50vh; }
+      50%   { bottom: -50vh; }
       70% { bottom: 40vh; }
       80% { bottom: 35vh; }
       90% { bottom: 40vh; }
       100% { bottom: 35vh; }
     }
     @keyframes pop-win {
-      0%   { bottom: -200px; }
-      50%   { bottom: -200px; }
+      0%   { bottom: -50vh; }
+      50%   { bottom: -50vh; }
       70% { bottom: 40vh; }
       80% { bottom: 35vh; }
       90% { bottom: 40vh; }
@@ -494,25 +475,34 @@ fonts south park like
     .modal-content p{
       margin-bottom: 20px;
       margin-top: 10px;
+      font-size: 16px;
       font-family: 'zed_saidregular'
     }
 
     .modal-content h2{
-      font-family: 'cibolaregular'
+      font-family: 'cibolaregular';
+      font-size: 40px;
+      margin-bottom: 16px;
 
     }
+
 
     .close a {
       text-align: center;
       background-color: rgb(112, 72, 18);
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-      margin: 0 15px;
+      margin: 0 30px;
       padding: 10px 20px;
       margin-top: 20px;
       font-family: 'cibolaregular';
       text-decoration: none;
+      margin-left: 30px;
 
+    }
+
+    .close a:hover {
+        transform: scale(1.03);
     }
     .close h2 {
       font-family: 'cibolaregular'
@@ -536,7 +526,7 @@ fonts south park like
       width: 30%;
       float: left;
     }
-
-    
-
+    a:hover {
+      transform: scale(1.03);
+    }
 
