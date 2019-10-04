@@ -313,7 +313,7 @@ fonts south park like
 }
 
 .imgClass{
-  cursor: pointer;
+  cursor: url(images/JesusPointer.png), auto;
 }
 
 a:hover {
