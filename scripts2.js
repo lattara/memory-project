@@ -128,8 +128,8 @@ function onCardClicked (i) {
   if ((imgToCompare.length === 2) && (imgToCompare[0] === imgToCompare[1])) { 
 // changement de couleur des cartes gagantes en fonction du joueur actif
     if (playerOne === true) {
-      firstCardFront.style.backgroundColor = "#074a12";
-      secondCardFront.style.backgroundColor = "#074a12";
+      firstCardFront.style.backgroundColor = "#9d4909";
+      secondCardFront.style.backgroundColor = "#9d4909";
       let audioTemp = audioLibrary1P[randomNumber(audioLibrary1P.length)]
       let audio = new Audio(`${audioTemp}`)
       audio.play();
@@ -142,8 +142,8 @@ function onCardClicked (i) {
       killKenny();
 
     } else {
-      firstCardFront.style.backgroundColor = "#730000";
-      secondCardFront.style.backgroundColor = "#730000";
+      firstCardFront.style.backgroundColor = "#024a4d";
+      secondCardFront.style.backgroundColor = "#024a4d";
       let audioTemp = audioLibrary2P[randomNumber(audioLibrary2P.length)]
       let audio = new Audio(`${audioTemp}`)
       audio.play();

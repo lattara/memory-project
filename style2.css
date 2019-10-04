@@ -27,7 +27,7 @@ fonts south park like
         
     body {
       height: 100vh;
-      background-image: url(images/bg.jpg);
+      background-image: url(images/back2players.jpg);
       background-size: cover;
       background-position: bottom left;
       display: flex;
@@ -95,14 +95,13 @@ fonts south park like
       width: 250px;
       display: flex;
       flex-direction: column;
-      justify-content:space-around;
       align-items: center;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     }
   
     .play{
       text-align: center;
-      background-color: rgb(107, 71, 5);
+      background-color: #4A79A5;
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
       margin: 0 15px;
@@ -111,7 +110,7 @@ fonts south park like
   
     .play_button{
       padding: 10px 20px;
-      color: black;
+      color:white;
       display: block;
       text-decoration: none;
       font-family: 'cibolaregular';
@@ -128,180 +127,10 @@ fonts south park like
       bottom: 15px;
     }
 
+    .play:hover{
+      background-color: rgb(27, 40, 51);
+    }
 
-
-
-  /*-- Modal --*/
-
-  ​
-    #home{
-      background-image: url(images/bg_home.jpg);
-      background-size: cover;
-      background-position: bottom left;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      -webkit-animation: top-bottom 3s ease; /* Safari 4+ */
-      -moz-animation:    top-bottom 3s ease; /* Fx 5+ */
-      -o-animation:      top-bottom 3s ease; /* Opera 12+ */
-      animation:         top-bottom 3s ease; /* IE 10+, Fx 29+ */
-    }
-  ​
-    @-webkit-keyframes top-bottom {
-      0%   { opacity: 1; }
-      50%   { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    @-moz-keyframes top-bottom {
-      0%   { opacity: 1; }
-      50%   { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    @-o-keyframes top-bottom {
-      0%   { opacity: 1; }
-      50%   { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    @keyframes top-bottom {
-      0%   { opacity: 1; }
-      50%   { opacity: 1; }
-      100% { opacity: 0; }
-    }
-  ​
-    #option-div{
-      width: 500px;
-      margin: -50vh auto 0;
-      text-align: center;
-      background-color: #6d5749;
-      padding: 30px;
-      box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
-      position: absolute;
-      -webkit-animation: pop-choices 4s ease; /* Safari 4+ */
-      -moz-animation:    pop-choices 4s ease; /* Fx 5+ */
-      -o-animation:      pop-choices 4s ease; /* Opera 12+ */
-      animation:         pop-choices 4s ease; /* IE 10+, Fx 29+ */
-    }
-  ​
-    @-webkit-keyframes pop-choices {
-      0%   { margin: 0 auto 0; }
-      75%   { margin: 0 auto 0; }
-      85% { margin: -55vh auto 0; }
-      90% { margin: -50vh auto 0; }
-      95% { margin: -55vh auto 0; }
-      100% { margin: -50vh auto 0; }
-    }
-    @-moz-keyframes pop-choices {
-      0%   { margin: 0 auto 0; }
-      75%   { margin: 0 auto 0; }
-      85% { margin: -55vh auto 0; }
-      90% { margin: -50vh auto 0; }
-      95% { margin: -55vh auto 0; }
-      100% { margin: -50vh auto 0; }
-    }
-    @-o-keyframes pop-choices {
-      0%   { margin: 0 auto 0; }
-      75%   { margin: 0 auto 0; }
-      85% { margin: -55vh auto 0; }
-      90% { margin: -50vh auto 0; }
-      95% { margin: -55vh auto 0; }
-      100% { margin: -50vh auto 0; }
-    }
-    @keyframes pop-choices {
-      0%   { margin: 0 auto 0; }
-      75%   { margin: 0 auto 0; }
-      85% { margin: -55vh auto 0; }
-      90% { margin: -50vh auto 0; }
-      95% { margin: -55vh auto 0; }
-      100% { margin: -50vh auto 0; }
-    }
-  ​
-    h1{
-      font-family: 'cibolaregular';
-      font-size: 48px;
-      margin-top: -5px;
-      text-transform: uppercase;
-    }
-  ​
-    h2, h3{
-      font-family: 'zed_saidregular';
-    }
-  ​
-    h2{
-      font-size: 34px;
-    }
-  ​
-    h3{
-      font-size: 28.2px;
-      margin-top: -2px;
-    }
-  ​
-    #choices{
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-around;
-      align-content: space-around;
-      position: relative;
-    }
-  ​
-    #choices .button-player{
-      position: relative;
-    }
-  ​
-    #choices .button-player a{
-      font-family: 'zed_saidregular';
-      text-decoration: none;
-      color: white;
-      background-color: gray;
-      border-radius: 5px;
-      padding: 10px;
-      box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      z-index: 2;
-    }
-  ​
-    #choices .button-player a:hover{
-      box-shadow: 2px 2px 2px rgba(0,0,0,0);
-      background-color: maroon;
-    }
-  ​
-    #choices img{
-      margin-top: 20px;
-    }
-  ​
-    #choices .avatar-1, #choices .avatar-2, #choices .avatar-3{
-      position: absolute;
-      opacity: 0;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      z-index: 1;
-    }
-  ​
-    #choices .avatar-1{
-      top: -78px;
-      left: 27px;
-    }
-  ​
-    #choices .avatar-2{
-      top: -78px;
-      left: 3px;
-    }
-  ​
-    #choices .avatar-3{
-      top: -74px;
-      left: 57px;
-    }
-  ​
-    #choices .btn1:hover .avatar-1, #choices .btn2:hover .avatar-2, #choices .btn2:hover .avatar-3{
-      opacity: 1;
-    }
-  ​
 
     /* modal  */
 
@@ -328,16 +157,13 @@ fonts south park like
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-top: 20px;
     }
     #kennyfront{
-      height: 150px;
-      width: 200px;
       display:block;
     }
 
     #kennyback{
-      height: 150px;
-      width: 200px;
       display:none;
     }
 
@@ -346,19 +172,15 @@ fonts south park like
     }
 
     #cartmanfront{
-      height: 150px;
-      width: 160px;
       display:block;
     }
 
     #cartmanback{
-      height: 150px;
-      width: 160px;
       display:none;
     }
 
     #kennyName, #cartmanName {
-      font-size: 1em;
+      font-size: 3em;
       font-family: 'cibolaregular';
       src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
            url('fonts/south-park/cibola-webfont.woff') format('woff');
@@ -369,7 +191,7 @@ fonts south park like
 
     .scoreBar{
       text-align: center;
-      background-color:rgb(107, 71, 5);
+      background-color: #4A79A5;
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
       padding: 20px 30px;
@@ -484,31 +306,40 @@ fonts south park like
 
     }
 
+    .event_btn{
+      padding-left: 150px;
+    }
+
+    .event_btn .play:hover{
+      background-color: rgb(27, 40, 51);
+    }
+
+    .close{
+      color: white;
+    }
 
     .close a {
       text-align: center;
-      background-color: rgb(112, 72, 18);
+      background-color: #4A79A5;
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-      margin: 0 30px;
       padding: 10px 20px;
-      margin-top: 20px;
       font-family: 'cibolaregular';
       text-decoration: none;
-      margin-left: 30px;
-
+      float: left;
     }
 
     .close a:hover {
         transform: scale(1.03);
+        background-color: rgb(27, 40, 51);
     }
+
     .close h2 {
       font-family: 'cibolaregular'
     }
 
     .close a:visited {
       color: inherit;
-      
     }
 
     #memory-game{
@@ -520,7 +351,6 @@ fonts south park like
       color: rgb(0, 0, 0);
       display: block;
       text-decoration: none;
-
     }
 
     #cartmanwin {
