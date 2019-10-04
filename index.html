@@ -1,63 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
   <title>Memory Game</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
-
 <body>
 
-    <section id="game_state">
-      <div id="playersName" class="playersName">KENNY</div>
-        
-      <div id="avatarContainer1">
-        <img src="images/KennyMcCormick.png" id="kennyfront">
-        <img src="images/kennyAngel.png" id="kennyback">
-      </div>
-
-      <div class="scoreBar" id="scoreFrame">
-        Score : <span id="score">0</span>
-      </div>
+<section id='home'>
   
-      <div id="count"></div>
-      
-      <div class="home_return">
-        <div class="play">
-          <a href="index.html" class="play_button">HOME</a>
-        </div>
+</section>
 
-        <div class="play">
-          <a href="#" class="play_button" onclick="displayCard()">REPLAY</a>
-        </div>
+<section id="option-div">
+  
+  <div id="title">
+      <h2>- Welcome to -</h2>
+      <h1>South Park</h1>
+      <h3>Brain Destructor</h3>
+    </div>
+  
+    <div id='choices'>
+      <div class="button-player btn1">
+        <img src="images/kenny_profile.png" class="avatar-1" alt="avatar kenny south park"/>
+        <a href="onePlayer.html">One player</a>
       </div>
 
-      <div id="score"></div>
-      <div id="count"></div>
-    </section>
-   
-    <section id="memory-game">
-    </section>
+      <div class="button-player btn2">
+          <img src="images/kenny_profile.png" class="avatar-2" alt="avatar kenny south park"/>
+          <img src="images/cartman_profile.png" class="avatar-3" alt="avatar cartman south park"/>
+          <a href="twoPlayers.html">Two players</a>
+      </div>
+    </div>
+</section>
 
 
-    <section id='modal1'>
-        <img id="kennywin" src="images/Kennywin.png" alt="Kenny" />
-        <img id="cartmanwin" src="images/Cartmanwin.png" alt="Kenny" />
-        <div class="modal-content">
-            <h2 id="turn"></h2>
-            <p>Hm hmm hmm hm hmmm hm hmm !!</p>
-            <div class="close">
-                <a href="#" onclick="closeClick()" class="close_button">Close</a>
-            </div>
-        </div>
-      </section>
+
 
 
   <script src="scripts.js"></script>
 </body>
-
-
 </html>

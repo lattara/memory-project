@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section id="game_state">
+      <div id="playersName" class="playersName">KENNY</div>
+        
+      <div id="avatarContainer1">
+        <img src="images/KennyMcCormick.png" id="kennyfront">
+        <img src="images/kennyAngel.png" id="kennyback">
+      </div>
+
+      <div class="scoreBar" id="scoreFrame">
+        Score : <span id="score">0</span>
+      </div>
+  
+      <div id="count"></div>
+      
+      <div class="home_return">
+        <div class="play">
+          <a href="index.html" class="play_button">Home</a>
+        </div>
+
+        <div class="play">
+          <a href="twoPlayers.html" class="play_button">2 Players</a>
+        </div>
+      </div>
+
+      <div id="score"></div>
+      <div id="count"></div>
+    </section>
+   
+    <section id="memory-game">
+    </section>
+
+
+    <section id='modal1'>
+        <img id="kennywin" src="images/Kennywin.png" alt="Kenny" />
+        <img id="cartmanwin" src="images/Cartmanwin.png" alt="Kenny" />
+        <div class="modal-content">
+            <h2 id="turn"></h2>
+            <p>Hm hmm hmm hm hmmm hm hmm !!</p>
+
+            <div class="event_btn">
+              <div class="close">
+                  <a href="#" onclick="closeClick()" class="close_button">Close</a>
+              </div>
+
+              <div class="play">
+                <a href="#" class="play_button" onclick="displayCard()">Replay</a>
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+  <script src="scripts.js"></script>
+</body>
+
+
+</html>
