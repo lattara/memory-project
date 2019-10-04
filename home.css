@@ -79,32 +79,32 @@
   }
 
   @-webkit-keyframes pop-choices {
-    0%   { margin: 0 auto 0; }
-    75%   { margin: 0 auto 0; }
+    0%   { margin: 50px auto 0; }
+    75%   { margin: 50px auto 0; }
     85% { margin: -55vh auto 0; }
     90% { margin: -50vh auto 0; }
     95% { margin: -55vh auto 0; }
     100% { margin: -50vh auto 0; }
   }
   @-moz-keyframes pop-choices {
-    0%   { margin: 0 auto 0; }
-    75%   { margin: 0 auto 0; }
+    0%   { margin: 50px auto 0; }
+    75%   { margin: 50px auto 0; }
     85% { margin: -55vh auto 0; }
     90% { margin: -50vh auto 0; }
     95% { margin: -55vh auto 0; }
     100% { margin: -50vh auto 0; }
   }
   @-o-keyframes pop-choices {
-    0%   { margin: 0 auto 0; }
-    75%   { margin: 0 auto 0; }
+    0%   { margin: 50px auto 0; }
+    75%   { margin: 50px auto 0; }
     85% { margin: -55vh auto 0; }
     90% { margin: -50vh auto 0; }
     95% { margin: -55vh auto 0; }
     100% { margin: -50vh auto 0; }
   }
   @keyframes pop-choices {
-    0%   { margin: 0 auto 0; }
-    75%   { margin: 0 auto 0; }
+    0%   { margin: 50px auto 0; }
+    75%   { margin: 50px auto 0; }
     85% { margin: -55vh auto 0; }
     90% { margin: -50vh auto 0; }
     95% { margin: -55vh auto 0; }
@@ -142,7 +142,7 @@
   #macaron{
     position: absolute;
     top: -260px;
-    bottom: -63px;
+    right: -63px;
   }
 
   #choices .button-player{
