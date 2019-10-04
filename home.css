@@ -139,6 +139,12 @@
     position: relative;
   }
 
+  #macaron{
+    position: absolute;
+    top: -260px;
+    bottom: -63px;
+  }
+
   #choices .button-player{
     position: relative;
   }
