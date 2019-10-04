@@ -122,10 +122,11 @@ function onCardClicked (i) {
     // Appel la fonction du calcul du score et affiche le score dans le HTML
     addScore();
     
-    scoreElt.innerHTML = `${score}`;
+    
     
     tryCount();
     
+    tryCountElt.innerHTML = `${tryCount}`;
     //countElt.innerHTML =(`<p> Try : ${count} </p>` )
     // alors on réinitialise aussi les tableaux contenants les Id des cartes retournées
     backElmntArray = [];
