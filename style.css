@@ -29,7 +29,7 @@ fonts south park like
   body {
     height: 100vh;
     display: flex;
-    background-image: url(/images/heavenbkg.jpg);
+    background-image: url(images/heavenbkg.jpg);
     background-size: cover;
     background-position: bottom left;
     overflow: hidden;
@@ -110,7 +110,7 @@ fonts south park like
 
   .play_button{
     padding: 10px 20px;
-    color: black;
+    color: white;
     display: block;
     text-decoration: none;
     font-family: 'cibolaregular';
@@ -133,18 +133,10 @@ fonts south park like
   }
   
   #kennyfront{
-    
-    height: 200px;
-    width: 230px;
-    margin-bottom: 20px;
     display:block;
-    
   }
+  
   #kennyback{
-
-    height: 200px;
-    width: 230px;
-    margin-bottom: 20px;
     display:none;
     
   }
@@ -157,7 +149,7 @@ fonts south park like
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.3);
     margin: 0 15px;
-    padding: 30px 50px;
+    padding: 20px 30px;
     color: black;
     display: block;
     text-decoration: none;
@@ -166,10 +158,8 @@ fonts south park like
   }
 
   .playersName{
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'cibolaregular';
-    src: url('fonts/south-park/cibola-webfont.woff2') format('woff2'),
-         url('fonts/south-park/cibola-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     color: black;
@@ -265,28 +255,42 @@ fonts south park like
 
 .modal-content h2{
   font-family: 'cibolaregular'
+}
 
+.event_btn .play{
+  margin: 0 0 0 15px;
+  color: white;
+}
+
+.event_btn .play:hover{
+  background-color: rgb(27, 40, 51);
+}
+
+.close{
+  color: white;
 }
 
 .close a {
   text-align: center;
-  background-color: rgb(112, 72, 18);
+  background-color: #4A79A5;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-  margin: 0 15px;
   padding: 10px 20px;
-  margin-top: 20px;
   font-family: 'cibolaregular';
   text-decoration: none;
-
+  float: left;
 }
+
+.close a:hover{
+  background-color: rgb(27, 40, 51);
+}
+
 .close h2 {
   font-family: 'cibolaregular'
 }
 
 .close a:visited {
   color: inherit;
-  
 }
 
 .modal-content {
@@ -294,7 +298,6 @@ fonts south park like
   color: rgb(0, 0, 0);
   display: block;
   text-decoration: none;
-
 }
 
 #kennywin {
@@ -309,10 +312,10 @@ fonts south park like
   float: right;
 }
 
-  .imgClass{
-    cursor: pointer;
-  }
+.imgClass{
+  cursor: pointer;
+}
 
-  a:hover {
-    transform: scale(1.03);
-  }
+a:hover {
+  transform: scale(1.03);
+}
