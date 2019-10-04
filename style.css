@@ -127,6 +127,10 @@ fonts south park like
     bottom: 15px;
   }
 
+  .play:hover{
+    background-color: rgb(27, 40, 51);
+  }
+
  /* ----- avatar styles ----- */
   .imgClass{
     cursor: pointer;
@@ -279,6 +283,7 @@ fonts south park like
   font-family: 'cibolaregular';
   text-decoration: none;
   float: left;
+  color: white;
 }
 
 .close a:hover{

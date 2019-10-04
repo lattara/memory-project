@@ -327,6 +327,7 @@ fonts south park like
       font-family: 'cibolaregular';
       text-decoration: none;
       float: left;
+      color: white;
     }
 
     .close a:hover {
